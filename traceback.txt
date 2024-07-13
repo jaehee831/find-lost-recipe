@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 6, in script
+    image figure1 = im.Scale("images/figure1.png", 50, None)
+  File "game/script.rpy", line 6, in <module>
+    image figure1 = im.Scale("images/figure1.png", 50, None)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 6, in script
+    image figure1 = im.Scale("images/figure1.png", 50, None)
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 922, in execute
+    img = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 6, in <module>
+    image figure1 = im.Scale("images/figure1.png", 50, None)
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\im.py", line 944, in __init__
+    self.height = int(height)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.2.3.24061702
+secret recipe 1.0
+Sat Jul 13 15:15:19 2024

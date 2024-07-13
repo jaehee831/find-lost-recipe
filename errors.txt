@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 6: expected statement.
+    im.Scale("images/figure1.png", 50, 50)
+                                          ^
+
+Ren'Py Version: Ren'Py 8.2.3.24061702
+Sat Jul 13 15:14:55 2024
