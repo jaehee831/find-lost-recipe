@@ -11,6 +11,9 @@ label start:
     scene bg_room
     play music bgm_music
 
+    centered "Now, let's play the memory game."
+    call memory_game_start
+
     # 인트로 텍스트
     centered "Welcome to the Mini Game Collection!"
     centered "First, let's play the find-item game."

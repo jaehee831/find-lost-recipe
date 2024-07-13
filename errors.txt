@@ -2,17 +2,17 @@
 errors listed below, and try again.
 
 
-The label start is defined twice, at File "game/card-match-game.rpy", line 159:
-label start:
-and File "game/find-item-game.rpy", line 92:
-label start:
+The label check_result is defined twice, at File "game/memory-game.rpy", line 77:
+label check_result:
+and File "game/script.rpy", line 77:
+label check_result:
 
 
-The label start is defined twice, at File "game/find-item-game.rpy", line 92:
-label start:
-and File "game/script.rpy", line 10:
-label start:
+The label memory_game_start is defined twice, at File "game/memory-game.rpy", line 91:
+label memory_game_start:
+and File "game/script.rpy", line 91:
+label memory_game_start:
 
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sat Jul 13 19:21:26 2024
+Sat Jul 13 23:05:28 2024
