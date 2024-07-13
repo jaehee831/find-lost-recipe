@@ -2,17 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/card-match-game.rpy", line 30: invalid syntax
-            if name! = "empty" and name! = "back":
-                    ^
+The label start is defined twice, at File "game/card-match-game.rpy", line 159:
+label start:
+and File "game/find-item-game.rpy", line 92:
+label start:
 
-File "game/card-match-game.rpy", line 104: invalid non-printable character U+200B
-    turned_cards_values ​​= []
-                         ^
 
-File "game/card-match-game.rpy", line 112: invalid syntax
-    turns_left - = 1
-                  ^
+The label start is defined twice, at File "game/find-item-game.rpy", line 92:
+label start:
+and File "game/script.rpy", line 10:
+label start:
+
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sat Jul 13 15:44:12 2024
+Sat Jul 13 19:21:26 2024

@@ -58,7 +58,7 @@ init python:
             if oN[oLast]:
                 oN[oLast] = ""
                 oLen += 1
-                renpy.play("audio/click.mp3", channel="sound")
+                renpy.play("sounds/click.mp3", channel="sound")
                 if oLen >= maxLen:
                     oActive = False
                     #renpy.hide_screen("game")
@@ -88,3 +88,23 @@ screen game:
             ymaximum 20
             thumb None
             thumb_shadow None
+
+label find_item_game_start:
+
+    # 배경 이미지 표시
+    show bg_room
+
+    e "Welcome to the game."
+    e "Let's start the item finding mini-game."
+
+    # 아이템 찾기 게임 초기화 및 실행
+    $ InitGame("bg_room", 5.0, (735, 300), "figure1", (640, 226), "figure2", (288, 38), "figure3", (115, 260), "figure4")
+    $ result = StartGame()
+
+    # 결과에 따른 메시지 표시
+    if result:
+        e "You found all items within the time limit!"
+    else:
+        e "You did not find all items in time."
+
+    return

@@ -155,8 +155,7 @@ label memo_game_win:
     centered "{size=48} {b} 성공! 냉장고의 비밀을 풀었다! {/b} {/size}"
     return
 
-# start-up example
-label start:
+label card_match_game_start:
     scene black
     $ max_time = 60
     $ ww, hh = 4, 4
@@ -164,3 +163,4 @@ label start:
     play music bgm_music
     call memoria_game
     return
+
