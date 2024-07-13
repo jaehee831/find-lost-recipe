@@ -1,3 +1,9 @@
+image bg_room = "images/bg_room.png"
+image figure1 = im.Scale("images/figure1.png", 100, 100)
+image figure2 = im.Scale("images/figure2.png", 100, 100)
+image figure3 = im.Scale("images/figure3.png", 100, 100)
+image figure4 = im.Scale("images/figure4.png", 100, 100)
+
 init python:
     import os
     os.environ['SDL_VIDEO_CENTERED'] = '1'
@@ -52,7 +58,7 @@ init python:
             if oN[oLast]:
                 oN[oLast] = ""
                 oLen += 1
-                renpy.play("sounds/click.mp3", channel="sound")
+                renpy.play("audio/click.mp3", channel="sound")
                 if oLen >= maxLen:
                     oActive = False
                     #renpy.hide_screen("game")

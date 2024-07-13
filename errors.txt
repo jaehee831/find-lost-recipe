@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 6: expected statement.
-    im.Scale("images/figure1.png", 50, 50)
-                                          ^
+File "game/card-match-game.rpy", line 30: invalid syntax
+            if name! = "empty" and name! = "back":
+                    ^
+
+File "game/card-match-game.rpy", line 104: invalid non-printable character U+200B
+    turned_cards_values ​​= []
+                         ^
+
+File "game/card-match-game.rpy", line 112: invalid syntax
+    turns_left - = 1
+                  ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sat Jul 13 15:14:55 2024
+Sat Jul 13 15:44:12 2024
