@@ -1,4 +1,4 @@
-﻿I'm sorry, but errors were detected in your script. Please correct the
+I'm sorry, but errors were detected in your script. Please correct the
 errors listed below, and try again.
 
 

@@ -1,4 +1,4 @@
-﻿# 캐릭터별 배경 및 이미지 정의
+# 캐릭터별 배경 및 이미지 정의
 image hd_bg = "bg kitchen.webp"
 image ss_bg = "bg kitchen.webp"
 image ys_bg = "bg rivalrestaurant.webp"

@@ -154,7 +154,7 @@ style say_label:
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
-    color "#fff"
+
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
@@ -1594,3 +1594,15 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+screen black_textbox(message):
+    frame:
+        background Solid("#000")  # 검은색 배경
+        xalign 0.5
+        yalign 0.5
+        xpadding 20
+        ypadding 20
+
+        text message:
+            color "#FFF"  # 흰색 텍스트
+            size 30  # 텍스트 크기
