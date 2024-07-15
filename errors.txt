@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 64: expected an indented block
-    global chat_history, conversation_history
-     ^
+File "game/script.rpy", line 371: 'chef' is not a keyword argument or valid child of the screen statement.
+    chef "우리 식당에 지원하게 된 계기가 무엇인가?"
+        ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Tue Jul 16 00:02:35 2024
+Tue Jul 16 00:16:42 2024

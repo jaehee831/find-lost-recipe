@@ -327,23 +327,19 @@ label interview_success:
 
     chef "당근으로 할 수 있는 요리 10가지를 말해봐."
 
-    $ carrot_dishes = []
-    $ time_left = 60  # 60초 타이머
+    $ carrot_dishes = renpy.input("당근으로 할 수 있는 요리 10가지???")
 
-    while len(carrot_dishes) < 10 and time_left > 0:
-        $ result = renpy.input("당근 요리를 입력하세요 (남은 시간: [time_left]초)", length=20)
-        $ carrot_dishes.append(result)
-        $ time_left -= 5  # 각 입력마다 5초 감소
+    minho "[carrot_dishes] 등이 있습니다."
 
-    if len(carrot_dishes) < 10:
-        show chef angry:
-            zoom 1.3
-        chef "그게 요리야?"
-        show minho depress:
-            zoom 1.2
-        minho "…"
-    else:
-        chef "흠… 괜찮군."
+    show chef angry:
+        zoom 1.3
+    chef "형편없군."
+    
+    show minho depress:
+        zoom 1.2
+    minho "…"
+
+
 
     chef "우리 식당에 지원하게 된 계기가 무엇인가?"
 
@@ -743,3 +739,5 @@ label game_over:
             jump start
         "아니오":
             return
+
+

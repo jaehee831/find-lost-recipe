@@ -1,60 +1,81 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/script.rpy", line 140, in prepare_screen
-    screen chat_interface():
-  File "game/script.rpy", line 140, in prepare
-    screen chat_interface():
-  File "game/script.rpy", line 162, in prepare
-    if input_mode:
-  File "game/script.rpy", line 162, in prepare
-    if input_mode:
-  File "game/script.rpy", line 163, in prepare
-    vbox:
-  File "game/script.rpy", line 163, in prepare
-    vbox:
-  File "game/script.rpy", line 168, in prepare
-    input id "user_input" value FieldInputValue("user_input") xalign 0.5 xsize 700
-  File "game/script.rpy", line 168, in prepare
-    input id "user_input" value FieldInputValue("user_input") xalign 0.5 xsize 700
-  File "game/script.rpy", line 168, in <module>
-    input id "user_input" value FieldInputValue("user_input") xalign 0.5 xsize 700
-TypeError: __init__() missing 1 required positional argument: 'field'
+While running game code:
+  File "game/script.rpy", line 337, in script
+    $ renpy.pause(10.0, hard=True)
+  File "game/script.rpy", line 337, in <module>
+    $ renpy.pause(10.0, hard=True)
+  File "game/script.rpy", line 750, in execute
+    screen carrot_timer:
+  File "game/script.rpy", line 750, in execute
+    screen carrot_timer:
+  File "game/script.rpy", line 753, in execute
+    frame:
+  File "game/script.rpy", line 756, in execute
+    text "남은 시간: [format(time_left, '.1f')]초"
+NameError: Name 'format' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\main.py", line 637, in main
-    run(restart)
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\main.py", line 94, in run
-    renpy.display.screen.prepare_screens()
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 1026, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/script.rpy", line 140, in prepare_screen
-    screen chat_interface():
-  File "game/script.rpy", line 140, in prepare
-    screen chat_interface():
-  File "game/script.rpy", line 162, in prepare
-    if input_mode:
-  File "game/script.rpy", line 162, in prepare
-    if input_mode:
-  File "game/script.rpy", line 163, in prepare
-    vbox:
-  File "game/script.rpy", line 163, in prepare
-    vbox:
-  File "game/script.rpy", line 168, in prepare
-    input id "user_input" value FieldInputValue("user_input") xalign 0.5 xsize 700
-  File "game/script.rpy", line 168, in prepare
-    input id "user_input" value FieldInputValue("user_input") xalign 0.5 xsize 700
+  File "game/script.rpy", line 337, in script
+    $ renpy.pause(10.0, hard=True)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 823, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 337, in <module>
+    $ renpy.pause(10.0, hard=True)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 1662, in pause
+    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2166, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2688, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2688, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 697, in update
+    self.screen.function(**self.scope)
+  File "game/script.rpy", line 750, in execute
+    screen carrot_timer:
+  File "game/script.rpy", line 750, in execute
+    screen carrot_timer:
+  File "game/script.rpy", line 753, in execute
+    frame:
+  File "game/script.rpy", line 756, in execute
+    text "남은 시간: [format(time_left, '.1f')]초"
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\text\text.py", line 1832, in _scope
+    return self.set_text(self.text_parameter, scope, self.substitute, update)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\text\text.py", line 1868, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\substitutions.py", line 371, in substitute
+    s = interpolate(s, kwargs) # type: ignore
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
   File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1202, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 168, in <module>
-    input id "user_input" value FieldInputValue("user_input") xalign 0.5 xsize 700
-TypeError: __init__() missing 1 required positional argument: 'field'
+  File "<none>", line 1, in <module>
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\substitutions.py", line 313, in __getitem__
+    raise NameError("Name '{}' is not defined.".format(key))
+NameError: Name 'format' is not defined.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.2.3.24061702
 secret 1.0
-Mon Jul 15 23:58:25 2024
+Tue Jul 16 00:18:16 2024
