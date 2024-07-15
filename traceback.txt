@@ -1,0 +1,26 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 178, in script
+    $ get_character_response()
+  File "game/script.rpy", line 178, in <module>
+    $ get_character_response()
+NameError: name 'get_character_response' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 178, in script
+    $ get_character_response()
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 823, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 178, in <module>
+    $ get_character_response()
+NameError: name 'get_character_response' is not defined
+
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.2.3.24061702
+secret 1.0
+Mon Jul 15 21:05:41 2024
