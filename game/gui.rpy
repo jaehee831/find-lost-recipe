@@ -9,7 +9,7 @@ init offset = -2
 ## gui.init의 호출은 스타일을 합리적인 기본값으로 재설정하고, 게임의 너비(width)
 ## 와 높이(height)를 설정합니다.
 init python:
-    gui.init(1794, 1024)
+    gui.init(1792, 1024)
 
 ## 화면 또는 트랜스폼에서 유효하지 않거나 불안정한 프로퍼티 검사 활성화
 define config.check_conflicting_properties = True

@@ -1,26 +1,60 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 178, in script
-    $ get_character_response()
-  File "game/script.rpy", line 178, in <module>
-    $ get_character_response()
-NameError: name 'get_character_response' is not defined
+After initialization, but before game start.
+  File "game/script.rpy", line 140, in prepare_screen
+    screen chat_interface():
+  File "game/script.rpy", line 140, in prepare
+    screen chat_interface():
+  File "game/script.rpy", line 162, in prepare
+    if input_mode:
+  File "game/script.rpy", line 162, in prepare
+    if input_mode:
+  File "game/script.rpy", line 163, in prepare
+    vbox:
+  File "game/script.rpy", line 163, in prepare
+    vbox:
+  File "game/script.rpy", line 168, in prepare
+    input id "user_input" value FieldInputValue("user_input") xalign 0.5 xsize 700
+  File "game/script.rpy", line 168, in prepare
+    input id "user_input" value FieldInputValue("user_input") xalign 0.5 xsize 700
+  File "game/script.rpy", line 168, in <module>
+    input id "user_input" value FieldInputValue("user_input") xalign 0.5 xsize 700
+TypeError: __init__() missing 1 required positional argument: 'field'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 178, in script
-    $ get_character_response()
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 823, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 178, in <module>
-    $ get_character_response()
-NameError: name 'get_character_response' is not defined
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\main.py", line 637, in main
+    run(restart)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\main.py", line 94, in run
+    renpy.display.screen.prepare_screens()
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 1026, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/script.rpy", line 140, in prepare_screen
+    screen chat_interface():
+  File "game/script.rpy", line 140, in prepare
+    screen chat_interface():
+  File "game/script.rpy", line 162, in prepare
+    if input_mode:
+  File "game/script.rpy", line 162, in prepare
+    if input_mode:
+  File "game/script.rpy", line 163, in prepare
+    vbox:
+  File "game/script.rpy", line 163, in prepare
+    vbox:
+  File "game/script.rpy", line 168, in prepare
+    input id "user_input" value FieldInputValue("user_input") xalign 0.5 xsize 700
+  File "game/script.rpy", line 168, in prepare
+    input id "user_input" value FieldInputValue("user_input") xalign 0.5 xsize 700
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 168, in <module>
+    input id "user_input" value FieldInputValue("user_input") xalign 0.5 xsize 700
+TypeError: __init__() missing 1 required positional argument: 'field'
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.2.3.24061702
 secret 1.0
-Mon Jul 15 21:05:41 2024
+Mon Jul 15 23:58:25 2024

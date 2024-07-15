@@ -9,7 +9,10 @@ image 사수 normal = "sous norm.png"
 image 영수 normal = "ys normal.png"
 image 알바생 normal = "alba normal.png"
 
+
 init python:
+    
+
     import requests
     import json
 
@@ -55,22 +58,19 @@ init python:
 
 
     def send_message():
-        global current_message, chat_history, conversation_history
+        global current_message, conversation_history
         user_message = renpy.get_widget("chat_interface", "user_input").content
         if user_message:
             current_message = f"당신: {user_message}"
-            chat_history.append(current_message)
             conversation_history.append({"role": "user", "content": user_message})
         renpy.restart_interaction()
 
     def get_character_response():
-        global current_message, chat_history, conversation_history
-        gpt_response = chat_with_gpt4(chat_history[-1].split(": ", 1)[1], conversation_history)
+        global current_message, conversation_history
+        gpt_response = chat_with_gpt4(conversation_history[-1]["content"], conversation_history)
         current_message = f"{selected_character}: {gpt_response}"
-        chat_history.append(current_message)
         conversation_history.append({"role": "assistant", "content": gpt_response})
-    renpy.restart_interaction()
-
+        renpy.restart_interaction()
 # 변수 초기화
 default chat_history = ""
 default conversation_history = []
@@ -137,12 +137,13 @@ screen chat_interface():
     tag menu
     $ character_to_image = {"헤드셰프": "헤드셰프 normal", "사수": "사수 normal", "영수": "영수 normal", "알바생": "알바생 normal"}
     $ character_to_bg = {"헤드셰프": "hd_bg", "사수": "ss_bg", "영수": "ys_bg", "알바생": "ab_bg"}
+    
     # 배경 설정
     $ current_bg = character_to_bg[selected_character]
     add current_bg
 
     # 캐릭터 이미지 표시
-    $ character_image = selected_character + " normal"
+    $ character_image = character_to_image[selected_character]
     add character_image
 
     # 대화 표시
@@ -150,43 +151,38 @@ screen chat_interface():
         id "window"
         has vbox:
             spacing 10
+            xsize 800
+            xalign 0.5
+            yalign 0.3
 
         if current_message:
             text current_message
 
-    # 입력 부분 (대화 입력 모드일 때만 표시)
-    if input_mode:
-        vbox:
-            xalign 0.5
-            yalign 0.95
-            spacing 20
+    # 입력 부분
+    vbox:
+        xalign 0.5
+        yalign 0.95
+        spacing 20
 
-            input id "user_input" xalign 0.5 xsize 700
-            hbox:
-                xalign 0.5
-                spacing 20
-                textbutton "보내기" action [Function(send_message), Return("sent")]
-                textbutton "나가기" action [Hide("chat_interface"), Show("main_menu")]
-    else:
-        textbutton "다음" xalign 0.9 yalign 0.95 action Return("next")
+        input id "user_input" xalign 0.5 xsize 700
+        hbox:
+            xalign 0.5
+            spacing 20
+            textbutton "보내기" action [Function(send_message), Return("sent")]
+            textbutton "나가기" action Return("exit")
+
 
 label chat_loop:
-    $ input_mode = True
     $ current_message = ""
     
     while True:
         call screen chat_interface
         if _return == "sent":
-            $ input_mode = False
-            $ renpy.pause()  # 사용자의 클릭을 기다립니다
             $ get_character_response()
-            $ renpy.pause()  # 사용자의 클릭을 기다립니다
-            $ input_mode = True
-        elif _return == "next":
-            pass
-        else:
+        elif _return == "exit":
+            hide screen chat_interface
+            show screen main_menu
             return
-
 
 screen character_selection():
     tag menu
@@ -359,6 +355,8 @@ label interview_success:
 
     chef "흠… 일단 알겠네."
 
+    
+
     scene bg daystreet
     with fade
 
@@ -436,6 +434,9 @@ label interview_success:
 
     sous "민호야~ 내가 주방좀 어질러놨는데 정리하고 퇴근해~"
 
+    call find_item_game_start
+    
+
     minho "네... 알겠습니다."
 
     hide sous
@@ -503,15 +504,7 @@ label several_months_later:
 
     minho "하여간 맨날 까먹는 게 문제야! 민호의 불쌍한 기억력을 도와주자."
 
-    menu:
-        "심사는 언제인가요?":
-            minho "맞다! 이틀 뒤라고 했어!"
-
-        "무슨 요리의 레시피가 없어졌나요?":
-            minho "그래, 마라로제 푸아그라 조림이었어!"
-
-        "심사 날짜와 요리 이름이 뭐였죠?":
-            minho "아, 맞아! 이틀 뒤에 마라로제 푸아그라 조림 심사가 있대!"
+    call memorial_game_start
 
     minho "꼭 찾아내고 말겠다고 생각한다."
 
@@ -529,6 +522,8 @@ label several_months_later:
     with fade
 
     narrator "민호가 냉장고를 열고, 다양한 재료들 사이에서 중요한 메모를 발견함. 메모는 조각나 있음"
+
+    call card_match_game_start
 
     minho "이건...! 메모 조각들이야!"
 
@@ -550,6 +545,10 @@ label several_months_later:
 
     scene bg room
     with fade
+    call lock_start
+    with fade
+    "민호는 성공적으로 자물쇠를 열었다."
+    $ renpy.pause(1.0, hard=True)
 
     narrator "민호는 셰프의 방에 들어왔다."
 
@@ -643,6 +642,8 @@ label chase_youngsu:
         zoom 1.2
 
     narrator "민호는 영수를 뒤쫓아 시장으로 향한다."
+
+    call click_game_start
 
     narrator "영수를 따라잡은 민호! 일단 냅다 어깨를 잡았다."
 
