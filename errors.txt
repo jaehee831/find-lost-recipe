@@ -2,7 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/memorial-game.rpy", line 47: Indentation mismatch.
+The label lock_start is defined twice, at File "game/lock.rpy", line 27:
+label lock_start:
+and File "game/script.rpy", line 10:
+label lock_start:
+
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Mon Jul 15 18:32:47 2024
+Mon Jul 15 21:31:15 2024

@@ -72,7 +72,7 @@ init python:
 
 screen game:
     if oActive and needTimer:
-        timer 0.01 repeat True action [SetVariable("oTime", oTime - .01), If(oTime <= .0, true=[Hide("game"), Function(lambda: renpy.return_statement(False))])]
+        timer 0.01 repeat True action [SetVariable("oTime", oTime - .01), If(oTime <= 0.0, true=[Hide("game"), Function(lambda: renpy.return_statement(False))])]
     add oBg
     for i in range(len(oN)):
         if oN[i]:
@@ -121,4 +121,3 @@ label find_item_game_start:
         hide screen black_textbox
         with dissolve
         jump find_item_game_start
-    

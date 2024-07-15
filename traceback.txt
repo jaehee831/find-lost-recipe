@@ -1,30 +1,90 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 16, in script call
-    call memorial_game_start
-  File "game/memorial-game.rpy", line 40, in script
-    $ rnezrandom.shuffle(cards)
-  File "game/memorial-game.rpy", line 40, in <module>
-    $ rnezrandom.shuffle(cards)
-NameError: name 'rnezrandom' is not defined
+  File "game/script.rpy", line 12, in script call
+    call lock_start
+  File "game/lock.rpy", line 37, in script
+    call screen number_input
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/lock.rpy", line 9, in execute
+    screen number_input:
+  File "game/lock.rpy", line 9, in execute
+    screen number_input:
+  File "game/lock.rpy", line 15, in execute
+    frame:
+  File "game/lock.rpy", line 17, in execute
+    has vbox
+  File "game/lock.rpy", line 21, in execute
+    input value VariableInputValue("input_value", length=1) default "":
+  File "game/lock.rpy", line 21, in keywords
+    input value VariableInputValue("input_value", length=1) default "":
+  File "game/lock.rpy", line 21, in <module>
+    input value VariableInputValue("input_value", length=1) default "":
+  File "renpy/common/00inputvalues.rpy", line 221, in __init__
+    super(VariableInputValue, self).__init__(store, variable, *args, **kwargs)
+  File "renpy/common/00inputvalues.rpy", line 183, in __init__
+    super(FieldInputValue, self).__init__(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'length'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 16, in script call
-    call memorial_game_start
-  File "game/memorial-game.rpy", line 40, in script
-    $ rnezrandom.shuffle(cards)
-  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 823, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/memorial-game.rpy", line 40, in <module>
-    $ rnezrandom.shuffle(cards)
-NameError: name 'rnezrandom' is not defined
+  File "game/script.rpy", line 12, in script call
+    call lock_start
+  File "game/lock.rpy", line 37, in script
+    call screen number_input
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1971, in execute
+    self.call("execute")
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1953, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\statements.py", line 349, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 3420, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2166, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2688, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\displayable.py", line 431, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2688, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 697, in update
+    self.screen.function(**self.scope)
+  File "game/lock.rpy", line 9, in execute
+    screen number_input:
+  File "game/lock.rpy", line 9, in execute
+    screen number_input:
+  File "game/lock.rpy", line 15, in execute
+    frame:
+  File "game/lock.rpy", line 17, in execute
+    has vbox
+  File "game/lock.rpy", line 21, in execute
+    input value VariableInputValue("input_value", length=1) default "":
+  File "game/lock.rpy", line 21, in keywords
+    input value VariableInputValue("input_value", length=1) default "":
+  File "game/lock.rpy", line 21, in <module>
+    input value VariableInputValue("input_value", length=1) default "":
+  File "renpy/common/00inputvalues.rpy", line 221, in __init__
+    super(VariableInputValue, self).__init__(store, variable, *args, **kwargs)
+  File "renpy/common/00inputvalues.rpy", line 183, in __init__
+    super(FieldInputValue, self).__init__(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'length'
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.2.3.24061702
 secret recipe 1.0
-Mon Jul 15 18:37:22 2024
+Mon Jul 15 21:32:32 2024

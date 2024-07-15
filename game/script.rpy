@@ -9,6 +9,8 @@ define e = Character('아이린', color="#c8ffc8")
 
 label start:
     scene bg_path
+    call find_item_game_start
+    call lock_start
 
     # 인트로 텍스트
     centered "Welcome to the Mini Game Collection!"
@@ -17,7 +19,6 @@ label start:
     # card-match-game.rpy 호출
     call card_match_game_start
     # find-item-game.rpy 호출
-    call find_item_game_start
 
     call click_game_start
 
