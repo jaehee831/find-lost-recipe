@@ -257,7 +257,7 @@ label start_story_mode:
     narrator "민호는 부랴부랴 급하게 준비해 택시를 잡고 식당으로 향하게 되는데…"
 
     scene bg kitchen
-    show chef normal at left:
+    show 헤드셰프 normal at left:
         zoom 1.3
 
     chef "이름이 뭔가?"
@@ -328,8 +328,9 @@ label interview_success:
     scene bg daystreet
     with fade
 
-    show minho depress:
+    show minho depress at left:
         zoom 1.2
+        yalign 1
 
     narrator "민호는 생각했다. 아 면접 망했다…"
 
@@ -360,7 +361,7 @@ label interview_success:
 
     narrator "사수가 뭔가 이상하다..?"
 
-    show sous normal at left:
+    show 사수 normal at left:
         zoom 1.2
 
     sous "민호야, 여기 물걸레로 좀 닦아봐~"
@@ -617,7 +618,7 @@ label chase_youngsu:
 
     show minho normal at right:
         zoom 1.2
-    show ys normal at left:
+    show 영수 normal at left:
         zoom 1.2
 
     minho "저기요!!"
