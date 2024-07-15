@@ -8,7 +8,7 @@ init python:
     max_points = 100
     img_name = "n"
     minN = 0  # 애니메이션의 시작 프레임을 0으로 설정
-    maxN = 14  # 애니메이션 프레임 수를 14개로 유지
+    maxN = 20  # 애니메이션 프레임 수를 14개로 유지
     points_plus = 2.5
 
     points_minus = 1.0
@@ -53,6 +53,12 @@ init:
     image n12 = "images/scene/n12.png"
     image n13 = "images/scene/n13.png"
     image n14 = "images/scene/n14.png"
+    image n15 = "images/scene/n15.png"
+    image n16 = "images/scene/n16.png"
+    image n17 = "images/scene/n17.png"
+    image n18 = "images/scene/n18.png"
+    image n19 = "images/scene/n19.png"
+    image n20 = "images/scene/n20.png"
     image heart = "images/heart.png"
     image heartempty = "images/heartempty.png"
 
@@ -77,12 +83,14 @@ screen clicker:
         thumb_shadow None
 
 label click_game_start:
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "sounds/click-game.mp3"
     scene expression (img_name + "0")
     pause .5
-    show expression Text("Prepared!") at truecenter as txt
+    show screen black_textbox("따라잡을 준비 완료!")
     with dissolve
     pause
-    hide txt
+    hide screen black_textbox
     $ points = 10
     call screen clicker
     if _return:
@@ -92,7 +100,12 @@ label click_game_start:
             $ renpy.pause(ani_time, hard=True)
         scene expression (img_name + str(maxN))
         with flash
-        show expression Text("Victory!") at truecenter as txt
+        show screen black_textbox("야호! 영수를 따라잡는 데 성공했다!")
+        $ renpy.pause(1.0, hard=True)
+        hide screen black_textbox
+        with dissolve
+        stop music fadeout 1.0
+        return 
     else:
         while number > 0:
             $ number -= 1
@@ -100,8 +113,9 @@ label click_game_start:
             $ renpy.pause(ani_time, hard=True)
         scene expression (img_name + "0")
         with flash2
-        show expression Text("Loss.") at truecenter as txt
+        show screen black_textbox("헉...너무 빠르잖아...다시 도전!")
     $ renpy.pause(1.0, hard=True)
-    hide txt
+    hide screen black_textbox
     with dissolve
-    return
+    jump click_game_start
+

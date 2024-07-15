@@ -5,7 +5,7 @@ image card_empty = im.Scale("images/card_empty.png", 170, 221)
 image card_A = im.Scale("images/card_A.png", 170, 221)
 image card_B = im.Scale("images/card_B.png", 170, 221)
 image card_C = im.Scale("images/card_C.png", 170, 221)
-define bgm_music = "audio/잔잔.mp3"
+#define bgm_music = "audio/잔잔.mp3"
 
 init python:
 
@@ -160,7 +160,7 @@ label card_match_game_start:
     $ max_time = 60
     $ ww, hh = 4, 4
 
-    play music bgm_music
+    #play music bgm_music
     call memoria_game
     return
 

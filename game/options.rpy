@@ -147,7 +147,8 @@ define config.save_directory = "secretrecipe-1720774099"
 ## 작업 표시 줄 또는 독에 표시되는 아이콘.
 
 define config.window_icon = "gui/window_icon.png"
-
+define config.screen_width = 1792
+define config.screen_height = 1024
 
 ## 빌드 구성 #######################################################################
 ##

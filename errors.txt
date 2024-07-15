@@ -1,18 +1,14 @@
-﻿I'm sorry, but errors were detected in your script. Please correct the
+I'm sorry, but errors were detected in your script. Please correct the
 errors listed below, and try again.
 
 
-The label check_result is defined twice, at File "game/memory-game.rpy", line 77:
-label check_result:
-and File "game/script.rpy", line 77:
-label check_result:
+File "game/find-item-game.rpy", line 106: keyword argument 'xalign' is incompatible with 'align'.
+    xalign 1.0
+          ^
 
-
-The label memory_game_start is defined twice, at File "game/memory-game.rpy", line 91:
-label memory_game_start:
-and File "game/script.rpy", line 91:
-label memory_game_start:
-
+File "game/find-item-game.rpy", line 107: keyword argument 'yalign' is incompatible with 'align'.
+    yalign 1.0
+          ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Sat Jul 13 23:05:28 2024
+Mon Jul 15 15:14:53 2024
