@@ -1,37 +1,39 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 21, in script call
+  File "game/script.rpy", line 18, in script call
     call find_item_game_start
-  File "game/find-item-game.rpy", line 102, in script
+  File "game/find-item-game.rpy", line 103, in script
     $ result = StartGame()
-  File "game/find-item-game.rpy", line 102, in <module>
+  File "game/find-item-game.rpy", line 103, in <module>
     $ result = StartGame()
-  File "game/game.rpy", line 38, in StartGame
-OSError: Couldn't find file 'sounds/click.mp3'.
+  File "game/game.rpy", line 37, in StartGame
+OSError: Couldn't find file 'sounds/find-item-game.mp3'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 21, in script call
+  File "game/script.rpy", line 18, in script call
     call find_item_game_start
-  File "game/find-item-game.rpy", line 102, in script
+  File "game/find-item-game.rpy", line 103, in script
     $ result = StartGame()
   File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 823, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/find-item-game.rpy", line 102, in <module>
+  File "game/find-item-game.rpy", line 103, in <module>
     $ result = StartGame()
-  File "game/game.rpy", line 38, in StartGame
-  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 1662, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
+  File "game/game.rpy", line 37, in StartGame
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\exports.py", line 3420, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
   File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\ui.py", line 301, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2166, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 3026, in interact_core
-    renpy.audio.audio.periodic()
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\display\core.py", line 2738, in interact_core
+    renpy.audio.audio.interact()
+  File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\audio\audio.py", line 1245, in interact
+    periodic()
   File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\audio\audio.py", line 1199, in periodic
     raise_(exc[0], exc[1], exc[2])
   File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
@@ -45,9 +47,9 @@ Full traceback:
     rv = renpy.loader.load(fn, directory="audio")
   File "C:\Users\user\Downloads\renpy-8.2.3-sdk\renpy\loader.py", line 672, in load
     raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'sounds/click.mp3'.
+OSError: Couldn't find file 'sounds/find-item-game.mp3'.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.2.3.24061702
 secret recipe 1.0
-Sat Jul 13 20:21:25 2024
+Mon Jul 15 16:22:56 2024

@@ -1,8 +1,11 @@
 image bg_room = "images/bg_room.png"
-image figure1 = im.Scale("images/figure1.png", 100, 100)
-image figure2 = im.Scale("images/figure2.png", 100, 100)
-image figure3 = im.Scale("images/figure3.png", 100, 100)
-image figure4 = im.Scale("images/figure4.png", 100, 100)
+image bg_path = "images/bg_path.png"
+image item1 = im.Scale("images/pot.png", 80, 80)
+image item2 = im.Scale("images/fan.png", 110, 110)
+image item3 = im.Scale("images/knife.png", 70, 70)
+image item4 = im.Scale("images/board.png", 100, 100)
+image item5 = im.Scale("images/plate.png", 80, 80)
+image item_list_bg = "images/item-list.png"  # item-list 이미지 추가
 
 init python:
     import os
@@ -18,8 +21,9 @@ init python:
     needTimer = False
     oActive = False
 
+
     def InitGame(bg, time, *args):
-        global oBg, oXY, oN, oLen, maxLen, oLast, oTime, oMaxTime, oActive, needTimer
+        global oBg, oXY, oN, oLen, maxLen, oLast, oTime, oMaxTime, oActive, needTimer, item_list
         oXY = []
         oN = []
         oLen = 0
@@ -28,13 +32,14 @@ init python:
         oTime = time
         oMaxTime = time
         maxLen = 0
-        oActive = True
+        oActive = True 
         if oTime > 0.0:
             needTimer = True
         for xy, obj_name in zip(args[0::2], args[1::2]):
             oXY.append(xy)
             oN.append(obj_name)
             maxLen += 1
+            item_list.append(obj_name) 
 
     def StartGame():
         global oActive, needTimer
@@ -59,9 +64,9 @@ init python:
                 oN[oLast] = ""
                 oLen += 1
                 renpy.play("sounds/click.mp3", channel="sound")
+                item_list[oLast] = "" 
                 if oLen >= maxLen:
                     oActive = False
-                    #renpy.hide_screen("game")
                     return True
         return False
 
@@ -90,21 +95,30 @@ screen game:
             thumb_shadow None
 
 label find_item_game_start:
-
-    # 배경 이미지 표시
-    show bg_room
-
-    e "Welcome to the game."
-    e "Let's start the item finding mini-game."
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "sounds/find-item.mp3"
 
     # 아이템 찾기 게임 초기화 및 실행
-    $ InitGame("bg_room", 5.0, (735, 300), "figure1", (640, 226), "figure2", (288, 38), "figure3", (115, 260), "figure4")
+    show bg_room
+    show screen black_textbox("사수가 어질러놓은 주방 물건을 찾아야 해!")
+    with dissolve
+    pause
+    hide screen black_textbox
+    $ InitGame("bg_room", 5.0, (400, 267), "item1", (790, 517), "item2", (610, 573), "item3", (1130, 560), "item4", (1640, 560), "item5")
     $ result = StartGame()
 
     # 결과에 따른 메시지 표시
     if result:
-        e "You found all items within the time limit!"
+        show screen black_textbox("성공! 사수가 어질러놓은 물건을 모두 찾는데 성공했다.ㅎㅎ")
+        $ renpy.pause(1.0, hard=True)
+        hide screen black_textbox
+        with dissolve
+        stop music fadeout 1.0
+        return 
     else:
-        e "You did not find all items in time."
-
-    return
+        show screen black_textbox("실패! 다시 도전해보자...")
+        $ renpy.pause(1.0, hard=True)
+        hide screen black_textbox
+        with dissolve
+        jump find_item_game_start
+    

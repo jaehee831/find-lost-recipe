@@ -8,17 +8,17 @@
 define e = Character('아이린', color="#c8ffc8")
 
 label start:
-    scene bg_room
-    play music bgm_music
+    scene bg_path
 
     # 인트로 텍스트
     centered "Welcome to the Mini Game Collection!"
     centered "First, let's play the find-item game."
+    
+    # find-item-game.rpy 호출
+    call find_item_game_start
 
     call click_game_start
 
-    # find-item-game.rpy 호출
-    call find_item_game_start
 
     centered "Great job! Now, let's move on to the card match game."
 
