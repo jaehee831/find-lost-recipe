@@ -145,22 +145,34 @@ label memoria_game:
 label memo_game_lose:
     hide screen memo_scr
     $ renpy.pause(0.1, hard=True)
-    centered "{size=48} 저런... 다음 기회에!. {/size}"
+    scene background
+    show screen black_textbox("저런...다음 기회에!")
+    $ renpy.pause(1.0, hard=True)
+    hide screen black_textbox
+    with dissolve
     jump memoria_game
     
 # winnings
 label memo_game_win:
     hide screen memo_scr
     $ renpy.pause(0.1, hard=True)
-    centered "{size=48} {b} 성공! 냉장고의 비밀을 풀었다! {/b} {/size}"
+    scene background
+    show screen black_textbox("성공! 냉장고의 비밀을 풀었다!")
+    $ renpy.pause(1.0, hard=True)
+    hide screen black_textbox
+    with dissolve
     return
 
 label card_match_game_start:
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "sounds/card-match.mp3"
+
     scene black
     $ max_time = 60
     $ ww, hh = 4, 4
 
     #play music bgm_music
     call memoria_game
+    stop music fadeout 1.0
     return
 

@@ -2,13 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/find-item-game.rpy", line 106: keyword argument 'xalign' is incompatible with 'align'.
-    xalign 1.0
-          ^
+File "game/card-match-game.rpy", line 150: Line is indented, but the preceding show screen statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    $ renpy.pause(1.0, hard=True)
+    ^
 
-File "game/find-item-game.rpy", line 107: keyword argument 'yalign' is incompatible with 'align'.
-    yalign 1.0
-          ^
+File "game/card-match-game.rpy", line 161: Line is indented, but the preceding show screen statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    $ renpy.pause(1.0, hard=True)
+    ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Mon Jul 15 15:14:53 2024
+Mon Jul 15 17:38:15 2024
