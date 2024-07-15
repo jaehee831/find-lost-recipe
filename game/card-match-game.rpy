@@ -1,5 +1,5 @@
 # 이미지 선언
-image background = "images/bg_냉장고.png"
+image background = "images/bg_refrigerator.png"
 image card_back = im.Scale("images/card_back.png", 170, 221)
 image card_empty = im.Scale("images/card_empty.png", 170, 221)
 image card_A = im.Scale("images/card_A.png", 170, 221)

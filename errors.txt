@@ -2,13 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/card-match-game.rpy", line 150: Line is indented, but the preceding show screen statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    $ renpy.pause(1.0, hard=True)
-    ^
-
-File "game/card-match-game.rpy", line 161: Line is indented, but the preceding show screen statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    $ renpy.pause(1.0, hard=True)
-    ^
+File "game/memorial-game.rpy", line 47: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Mon Jul 15 17:38:15 2024
+Mon Jul 15 18:32:47 2024

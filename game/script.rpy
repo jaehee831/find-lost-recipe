@@ -13,6 +13,7 @@ label start:
     # 인트로 텍스트
     centered "Welcome to the Mini Game Collection!"
     centered "First, let's play the find-item game."
+    call memorial_game_start
     # card-match-game.rpy 호출
     call card_match_game_start
     # find-item-game.rpy 호출
@@ -22,8 +23,6 @@ label start:
 
 
     centered "Great job! Now, let's move on to the card match game."
-
-    
 
     centered "Well done! You've completed both mini games."
     centered "Thank you for playing!"
