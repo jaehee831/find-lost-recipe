@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 371: 'chef' is not a keyword argument or valid child of the screen statement.
-    chef "우리 식당에 지원하게 된 계기가 무엇인가?"
-        ^
+File "game/script.rpy", line 148: The key statement is not a valid child of the input statement.
+    key "K_RETURN" action [Function(send_message), Return("sent")]
+       ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Tue Jul 16 00:16:42 2024
+Tue Jul 16 00:53:01 2024

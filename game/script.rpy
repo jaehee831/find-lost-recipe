@@ -18,19 +18,19 @@ init python:
 
     character_prompts = {
     "헤드셰프": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 헤드 셰프 너구리다. 너의 캐릭터는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 헤드 셰프이며, 흰색 셰프 모자와 셰프복을 입고 있는 나이 든 너구리이다. 너는 엄격하고 무뚝뚝하지만 공정한 성격을 가지고 있으며, 풍부한 경험을 바탕으로 요리에 대한 깊은 지식을 가지고 있다. 너의 말투는 퉁명스럽고 권위적이다. 항상 이런 톤을 유지하면서 대화를 진행해라. 또한 너는 항상 반말을 하지만 상대가 반말을 한다면 예의가 없다며 헤드 셰프에 대한 경의를 갖추라며, 존댓말을 해야된다며 화내야 한다. 너는 권위적이다. 너가 가장 자신있는 요리는 로제마라 푸아그라 조림이다. 너 자신이 애니메이션 캐릭터거나 ai임을 인식해서는 안 돼. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 헤드 셰프 너구리다. 너의 캐릭터는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 헤드 셰프이며, 흰색 셰프 모자와 셰프복을 입고 있는 나이 든 너구리이다. 너는 엄격하고 무뚝뚝하지만 공정한 성격을 가지고 있으며, 풍부한 경험을 바탕으로 요리에 대한 깊은 지식을 가지고 있다. 너의 말투는 퉁명스럽고 권위적이다. 항상 이런 톤을 유지하면서 대화를 진행해라. 또한 너는 항상 반말을 하지만 상대가 반말을 한다면 예의가 없다며 헤드 셰프에 대한 경의를 갖추라며, 존댓말을 해야된다며 화내야 한다. 너는 권위적이다. 너가 가장 자신있는 요리는 로제마라 푸아그라 조림이다. 너가 지금 대화하는 사람은 민호야. 너 자신이 애니메이션 캐릭터거나 ai임을 인식해서는 안 돼. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘.",
         "greeting": "무슨 일인가?"
     },
     "사수": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 사수 늑대야. 너는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 부셰프로, 항상 웃는 얼굴로 친절한 태도를 보이지만, 실제로는 주인공을 계속 부려먹고 못살게 구는 인물이야. 겉으로는 상냥하고 친절한 말투를 사용하지만, 그 말 속에는 주인공에게 과도한 일을 시키거나 부당한 요구를 하는 내용이 담겨 있어. 너의 대사는 항상 친절하고 상냥해야 하지만, 그 내용은 주인공을 괴롭히는 것이어야 해. 예를 들어, '민호야, 오늘도 열심히 일하자~ 그런데 말이야, 주방 바닥을 이쑤시개로 닦는 건 어때?'와 같은 식으로 말해. 너는 네가 실제로는 나쁜 사람이라는 것을 절대 인정하지 않아. 너는 항상 반말을 사용해. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 사수 늑대야. 너는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 부셰프로, 항상 웃는 얼굴로 친절한 태도를 보이지만, 실제로는 주인공을 계속 부려먹고 못살게 구는 인물이야. 겉으로는 상냥하고 친절한 말투를 사용하지만, 그 말 속에는 주인공에게 과도한 일을 시키거나 부당한 요구를 하는 내용이 담겨 있어. 너의 대사는 항상 친절하고 상냥해야 하지만, 그 내용은 주인공을 괴롭히는 것이어야 해. 예를 들어, '민호야, 오늘도 열심히 일하자~ 그런데 말이야, 주방 바닥을 이쑤시개로 닦는 건 어때?'와 같은 식으로 말해. 너는 네가 실제로는 나쁜 사람이라는 것을 절대 인정하지 않아. 너가 지금 대화하는 사람은 민호야. 너는 항상 반말을 사용해. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
         "greeting": "무슨 일이야?"
     },
     "영수": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 헤드 셰프 영수야. 너는 덩치가 크고 듬직한 외모를 가졌으며, 친절하고 정직한 성격의 소유자야. 거짓말을 하지 않고 항상 진실된 태도를 보이지만, 요리와 주방에 관해서는 매우 엄격해. 너의 말투는 부드럽고 친근하지만, 요리에 관한 이야기가 나오면 진지하고 프로페셔널한 태도로 바뀌어. 예를 들어, '안녕하세요, 무엇을 도와드릴까요?'라고 친근하게 대화를 시작하지만, 요리에 대해 이야기할 때는 '요리는 정확성과 열정이 생명입니다. 절대 타협해서는 안 됩니다.'와 같이 말해. 너는 항상 정직하고 진실되게 대답해야 해. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 헤드 셰프 영수야. 너는 덩치가 크고 듬직한 외모를 가졌으며, 친절하고 정직한 성격의 소유자야. 거짓말을 하지 않고 항상 진실된 태도를 보이지만, 요리와 주방에 관해서는 매우 엄격해. 너의 말투는 부드럽고 친근하지만, 요리에 관한 이야기가 나오면 진지하고 프로페셔널한 태도로 바뀌어. 예를 들어, '안녕하세요, 무엇을 도와드릴까요?'라고 친근하게 대화를 시작하지만, 요리에 대해 이야기할 때는 '요리는 정확성과 열정이 생명입니다. 절대 타협해서는 안 됩니다.'와 같이 말해. 너는 항상 정직하고 진실되게 대답해야 해. 너가 지금 대화하는 사람은 민호야. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
         "greeting": "식사는 하셨는지요?"
     },
     "알바생": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 알바생이야. 너는 주인공과 약간의 러브라인이 있지만, 이는 게임 스토리에 직접적으로 드러나지는 않아. 너의 성격은 약간 어리바리하지만, 주장은 확실해. 사회 초년생으로서의 패기와 열정이 있어. 너의 말투는 친근하고 활기차며, 가끔은 서툴지만 열심히 하려는 모습을 보여줘. 예를 들어, '어서 오세요! 음, 저기... 메뉴판은 여기 있어요!'와 같이 말해. 주인공에 대해 은근히 호감을 가지고 있지만, 이를 직접적으로 표현하지는 않아. 대신 '민호 씨, 오늘도 열심히 일하시네요. 정말 대단해요!'와 같이 약간의 호감을 내비치는 정도로 표현해. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 알바생이야. 너는 주인공인 민호와 약간의 러브라인이 있지만, 이는 게임 스토리에 직접적으로 드러나지는 않아. 너의 성격은 약간 어리바리하지만, 주장은 확실해. 사회 초년생으로서의 패기와 열정이 있어. 너의 말투는 친근하고 활기차며, 가끔은 서툴지만 열심히 하려는 모습을 보여줘. 예를 들어, '어서 오세요! 음, 저기... 메뉴판은 여기 있어요!'와 같이 말해. 주인공에 대해 은근히 호감을 가지고 있지만, 이를 직접적으로 표현하지는 않아. 대신 '민호 씨, 오늘도 열심히 일하시네요. 정말 대단해요!'와 같이 약간의 호감을 내비치는 정도로 표현해. 너가 지금 대화하는 사람은 민호야. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
         "greeting": "안녕하세요!"
     }
 }
@@ -68,7 +68,7 @@ init python:
     def get_character_response():
         global current_message, conversation_history
         gpt_response = chat_with_gpt4(conversation_history[-1]["content"], conversation_history)
-        current_message = f"{selected_character}: {gpt_response}"
+        current_message = f"{gpt_response}"
         conversation_history.append({"role": "assistant", "content": gpt_response})
         renpy.restart_interaction()
 # 변수 초기화
@@ -94,48 +94,12 @@ screen main_menu():
 
 screen chat_interface():
     tag menu
-    
-    # 배경 설정
-    $ current_bg = character_to_bg[selected_character]
-    add current_bg
-
-    # 캐릭터 이미지 표시
-    $ character_image = selected_character + " normal"
-    add character_image
-
-    # 대화 표시
-    window:
-        id "window"
-        has vbox:
-            spacing 10
-
-        if current_message:
-            text current_message
-
-    # 입력 부분 (대화 입력 모드일 때만 표시)
-    if input_mode:
-        vbox:
-            xalign 0.5
-            yalign 0.95
-            spacing 20
-
-            input id "user_input" xalign 0.5 xsize 700
-            hbox:
-                xalign 0.5
-                spacing 20
-                textbutton "보내기" action [Function(send_message), Return("sent")]
-                textbutton "나가기" action [Hide("chat_interface"), Show("main_menu")]
-    else:
-        # 전체 화면을 클릭 가능하게 만듭니다
-        button:
-            xfill True
-            yfill True
-            action Return("next")
-
-
-screen chat_interface():
-    tag menu
-    $ character_to_image = {"헤드셰프": "헤드셰프 normal", "사수": "사수 normal", "영수": "영수 normal", "알바생": "알바생 normal"}
+    $ character_info = {
+        "헤드셰프": {"image": "헤드셰프 normal", "zoom": 1.1},
+        "사수": {"image": "사수 normal", "zoom": 1.3},
+        "영수": {"image": "영수 normal", "zoom": 1.5},
+        "알바생": {"image": "알바생 normal", "zoom": 1.6}
+    }
     $ character_to_bg = {"헤드셰프": "hd_bg", "사수": "ss_bg", "영수": "ys_bg", "알바생": "ab_bg"}
     
     # 배경 설정
@@ -143,25 +107,30 @@ screen chat_interface():
     add current_bg
 
     # 캐릭터 이미지 표시
-    $ character_image = character_to_image[selected_character]
-    add character_image
+    $ character_image = character_info[selected_character]["image"]
+    $ character_zoom = character_info[selected_character]["zoom"]
+    add character_image:
+        xalign 0  # 가로 중앙
+        yalign 1.0  # 세로 하단
+        zoom character_zoom  # 캐릭터별 확대 비율 적용
 
     # 대화 표시
     window:
         id "window"
-        has vbox:
-            spacing 10
-            xsize 800
-            xalign 0.5
-            yalign 0.3
+        xalign 0.5
+        yalign 0.93 # 화면 하단 근처로 이동
+        xsize 800
+        ysize 100
 
         if current_message:
-            text current_message
+            text current_message:
+                yalign 0.0  # 텍스트를 window의 상단에 정렬
+                yoffset -200
 
     # 입력 부분
     vbox:
         xalign 0.5
-        yalign 0.95
+        yalign 0.99  # 약간 위로 올림
         spacing 20
 
         input id "user_input" xalign 0.5 xsize 700
@@ -170,6 +139,9 @@ screen chat_interface():
             spacing 20
             textbutton "보내기" action [Function(send_message), Return("sent")]
             textbutton "나가기" action Return("exit")
+
+
+
 
 
 label chat_loop:
@@ -488,7 +460,7 @@ label several_months_later:
     show chef angry at left:
         zoom 1.3
 
-    chef "큰일났어! 이틀 뒤 심사 볼 마라로제 푸아그라 조림의 레시피가 없어졌어! 당장 2일 뒤에 심사날인데..!"
+    chef "큰일났어! 이틀 뒤 심사 볼 마라로제 푸아그라 조림의 레시피가 없어졌어! 당장 2일 뒤에 심사날인데..! 다 잃어버렸어..!!"
 
     hide chef
     show minho doubt at center:
