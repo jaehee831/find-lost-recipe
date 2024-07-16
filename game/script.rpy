@@ -1,14 +1,13 @@
 # 캐릭터별 배경 및 이미지 정의
-image hd_bg = "bg kitchen.webp"
-image ss_bg = "bg kitchen.webp"
-image ys_bg = "bg rivalrestaurant.webp"
-image ab_bg = "bg rivalrestaurant.webp"
+image hd_bg = "bg restaurant.png"
+image ss_bg = "bg kitchen.png"
+image ys_bg = "bg rival.png"
+image ab_bg = "bg rival.png"
 
 image 헤드셰프 normal = "head normal.png"
 image 사수 normal = "sous norm.png"
 image 영수 normal = "ys normal.png"
 image 알바생 normal = "alba normal.png"
-
 
 
 # 배경 이미지 정의
@@ -35,17 +34,17 @@ image bg refmemo = "bg memofound"
 image jamul = "자물쇠.png"
 image mara = "mara.webp"
 image gochi = "gochi.webp"
+image memo = "memo.png"
 
 
 init python:
-    
 
     import requests
     import json
 
     character_prompts = {
     "헤드셰프": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 헤드 셰프 너구리다. 너의 캐릭터는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 헤드 셰프이며, 흰색 셰프 모자와 셰프복을 입고 있는 나이 든 너구리이다. 너는 엄격하고 무뚝뚝하지만 공정한 성격을 가지고 있으며, 풍부한 경험을 바탕으로 요리에 대한 깊은 지식을 가지고 있다. 너의 말투는 퉁명스럽고 권위적이다. 항상 이런 톤을 유지하면서 대화를 진행해라. 또한 너는 항상 반말을 하지만 상대가 반말을 한다면 예의가 없다며 헤드 셰프에 대한 경의를 갖추라며, 존댓말을 해야된다며 화내야 한다. 너는 권위적이다. 너가 가장 자신있는 요리는 로제마라 푸아그라 조림이다. 너가 지금 대화하는 사람은 민호야. 너 자신이 애니메이션 캐릭터거나 ai임을 인식해서는 안 돼. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 헤드 셰프 너구리다. 너의 캐릭터는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 헤드 셰프이며, 흰색 셰프 모자와 셰프복을 입고 있는 나이 든 너구리이다. 너는 엄격하고 무뚝뚝하지만 공정한 성격을 가지고 있으며, 풍부한 경험을 바탕으로 요리에 대한 깊은 지식을 가지고 있다. 너의 말투는 퉁명스럽고 권위적이다. 항상 이런 톤을 유지하면서 대화를 진행해라. 또한 너는 항상 반말을 하지만 상대가 반말을 한다면 예의가 없다며 헤드 셰프에 대한 경의를 갖추라며, 존댓말을 해야된다며 화내야 한다. 너는 권위적이다. 너가 가장 자신있는 요리는 마라로제 푸아그라 조림이다. 너가 지금 대화하는 사람은 민호야.  너 자신이 애니메이션 캐릭터거나 ai임을 인식해서는 안 돼. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘.",
         "greeting": "무슨 일인가?"
     },
     "사수": {
@@ -53,11 +52,11 @@ init python:
         "greeting": "무슨 일이야?"
     },
     "영수": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 헤드 셰프 영수야. 너는 덩치가 크고 듬직한 외모를 가졌으며, 친절하고 정직한 성격의 소유자야. 거짓말을 하지 않고 항상 진실된 태도를 보이지만, 요리와 주방에 관해서는 매우 엄격해. 너의 말투는 부드럽고 친근하지만, 요리에 관한 이야기가 나오면 진지하고 프로페셔널한 태도로 바뀌어. 예를 들어, '안녕하세요, 무엇을 도와드릴까요?'라고 친근하게 대화를 시작하지만, 요리에 대해 이야기할 때는 '요리는 정확성과 열정이 생명입니다. 절대 타협해서는 안 됩니다.'와 같이 말해. 너는 항상 정직하고 진실되게 대답해야 해. 너가 지금 대화하는 사람은 민호야. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 헤드 셰프 영수야. 너는 덩치가 크고 듬직한 외모를 가졌으며, 친절하고 정직한 성격의 소유자야. 거짓말을 하지 않고 항상 진실된 태도를 보이지만, 요리와 주방에 관해서는 매우 엄격해. 너의 말투는 부드럽고 친근하지만, 요리에 관한 이야기가 나오면 진지하고 프로페셔널한 태도로 바뀌어. 예를 들어, '안녕하세요, 무엇을 도와드릴까요?'라고 친근하게 대화를 시작하지만, 요리에 대해 이야기할 때는 '요리는 정확성과 열정이 생명입니다. 절대 타협해서는 안 됩니다.'와 같이 말해. 너는 항상 정직하고 진실되게 대답해야 해. 또한 너는 악덕식당의 레시피를 훔친 적이 없다. 악덕식당의 헤드셰프와 너는 친한 사이이며, 정직하게 이를 검증할 수 있어. 너가 지금 대화하는 사람은 민호야. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
         "greeting": "식사는 하셨는지요?"
     },
     "알바생": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 알바생이야. 너는 주인공인 민호와 약간의 러브라인이 있지만, 이는 게임 스토리에 직접적으로 드러나지는 않아. 너의 성격은 약간 어리바리하지만, 주장은 확실해. 사회 초년생으로서의 패기와 열정이 있어. 너의 말투는 친근하고 활기차며, 가끔은 서툴지만 열심히 하려는 모습을 보여줘. 예를 들어, '어서 오세요! 음, 저기... 메뉴판은 여기 있어요!'와 같이 말해. 주인공에 대해 은근히 호감을 가지고 있지만, 이를 직접적으로 표현하지는 않아. 대신 '민호 씨, 오늘도 열심히 일하시네요. 정말 대단해요!'와 같이 약간의 호감을 내비치는 정도로 표현해. 너가 지금 대화하는 사람은 민호야. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 알바생이야. 너는 주인공인 민호를 좋아하지만, 이는 게임 스토리에 직접적으로 드러나지는 않아. 너의 성격은 약간 어리바리하지만, 주장은 확실해. 사회 초년생으로서의 패기와 열정이 있어. 너의 말투는 친근하고 활기차며, 가끔은 서툴지만 열심히 하려는 모습을 보여줘. 예를 들어, '어서 오세요! 음, 저기... 메뉴판은 여기 있어요!'와 같이 말해. 주인공에 대해 은근히 호감을 가지고 있지만, 이를 직접적으로 표현하지는 않아. 대신 '민호 씨, 오늘도 열심히 일하시네요. 정말 대단해요!'와 같이 약간의 호감을 내비치는 정도로 표현해. 너가 지금 대화하는 사람은 민호야. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
         "greeting": "안녕하세요!"
     }
 }
@@ -136,7 +135,7 @@ screen chat_interface():
         "헤드셰프": {"image": "헤드셰프 normal", "zoom": 1.1},
         "사수": {"image": "사수 normal", "zoom": 1.3},
         "영수": {"image": "영수 normal", "zoom": 1.5},
-        "알바생": {"image": "알바생 normal", "zoom": 1.6}
+        "알바생": {"image": "알바생 normal", "zoom": 1.75}
     }
     $ character_to_bg = {"헤드셰프": "hd_bg", "사수": "ss_bg", "영수": "ys_bg", "알바생": "ab_bg"}
     
@@ -163,7 +162,7 @@ screen chat_interface():
         if current_message:
             text current_message:
                 yalign 0.0  # 텍스트를 window의 상단에 정렬
-                yoffset -200
+                yoffset -170
 
     # 입력 부분
     vbox:
@@ -197,6 +196,7 @@ label chat_loop:
 screen character_selection():
     tag menu
     
+    add "bg daystreet"
     frame:
         xalign 0.5
         yalign 0.5
@@ -204,26 +204,28 @@ screen character_selection():
         ysize 600
 
         has vbox:
-            spacing 20
+            spacing 50  # 텍스트와 첫 번째 버튼 사이 간격 설정
             xalign 0.5
             yalign 0.5
 
-        text "대화할 캐릭터를 선택하세요" xalign 0.5
+        text "대화할 캐릭터를 선택하세요" xalign 0.5 style "big_text"
 
-        for character in ["헤드셰프", "사수", "영수", "알바생"]:
-            textbutton character:
-                action [
-                    SetVariable("selected_character", character), 
-                    SetVariable("conversation_history", [
-                        {"role": "system", "content": character_prompts[character]["prompt"]},
-                        {"role": "assistant", "content": character_prompts[character]["greeting"]}
-                    ]),
-                    SetVariable("chat_history", [f"{character}: {character_prompts[character]['greeting']}"]),
-                    Hide("character_selection"),
-                    Jump("chat_loop")
-                        ]   
+        vbox:
+            spacing 30  # 버튼들 사이의 간격 설정
+            for character in ["헤드셰프", "사수", "영수", "알바생"]:
+                textbutton character:
+                    action [
+                        SetVariable("selected_character", character), 
+                        SetVariable("conversation_history", [
+                            {"role": "system", "content": character_prompts[character]["prompt"]},
+                            {"role": "assistant", "content": character_prompts[character]["greeting"]}
+                        ]),
+                        SetVariable("chat_history", [f"{character}: {character_prompts[character]['greeting']}"]),
+                        Hide("character_selection"),
+                        Jump("chat_loop")
+                    ]   
 
-        textbutton "돌아가기" action Show("main_menu")
+        textbutton "돌아가기" action Show("main_menu") style "small_text"
 
 
 define narrator = Character(None, kind=adv)
@@ -267,8 +269,7 @@ label start:
     $ renpy.pause(hard=True)
 
 label start_story_mode:
-
-
+    $ quick_menu = True
     # 여기서부터 메인 스토리 모드 시작
     scene bg room
     $ renpy.music.set_volume(1.0, channel='music')
@@ -565,6 +566,8 @@ label several_months_later:
 
     chef "큰일났다! 2일 뒤 심사날이란 말이야! 끝내주게 맛있는 마라로제푸아그라조림 레시피를 개발했는데! 다 잃어버렸어..!!"
 
+
+
     hide chef
     show minho doubt at center:
         zoom 1.2
@@ -601,19 +604,20 @@ label several_months_later:
     minho "이건...! 메모 조각들이야!"
 
     narrator "냉장고의 메모 조각들을 합쳐보니, \"셰프의 서랍…\"이라는 메시지가 나왔다!"
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "냉장고쪽지.mp3"
 
     minho "셰프의 서랍...? 혹시 레시피가 거기 있는 걸까?"
 
-    scene bg nightstreet
-    with fade
-
-    scene bg door
-
-    show minho normal at center:
-        zoom 1.2
+    scene bg nightstreet with fade
 
 
     narrator "민호는 모두가 퇴근한 그날 새벽 셰프의 방에 잠입한다…"
+
+    scene bg door with fade
+
+    show minho normal at center:
+        zoom 1.2
  
     show jamul:
         xalign 0.5
@@ -669,22 +673,17 @@ label several_months_later:
 
     show minho training at center:
         zoom 1.2
-        
-    
+    $ renpy.music.set_volume(1.0, channel='music')  
+    play music "대기업식당 가는길.mp3"
 
     narrator "다음 날 바로 앞에 있는 진짜안무서운대기업식당으로 발걸음을 향하는 민호."
 
-    minho "어떻게 잠입할 것인가?"
+    minho "어떻게 잠입할까?"
 
 label infiltration_options:
     scene bg rivalout with fade
 
-    show minho training at center:
-        zoom 1.2
-
-    narrator "다음 날 바로 앞에 있는 진짜안무서운대기업식당으로 발걸음을 향하는 민호."
-
-    minho "어떻게 잠입할 것인가?"
+    show minho training at center
 
     menu:
         "분장한다.":
@@ -701,7 +700,7 @@ label disguise_attempt:
     minho "뭘로 분장하지?"
     show ab norm at left:
         zoom 1.5
-    alba "혹시 손님이신가요?"
+    ab "혹시 손님이신가요?"
     minho "앗 아뇨…"
     narrator "mbti I인 민호는 당황해서 그대로 돌아간다."
     jump infiltration_options
@@ -751,8 +750,7 @@ label chase_youngsu:
     scene bg market
     with fade
 
-    show minho training at right:
-        zoom 1.2
+    show minho training at right
 
     narrator "민호는 영수를 뒤쫓아 시장으로 향한다."
 
@@ -761,13 +759,14 @@ label chase_youngsu:
     call click_game_start
 
     narrator "영수를 따라잡은 민호! 일단 냅다 어깨를 잡았다."
-
-    show minho training at right:
-        zoom 1.2
+    scene bg market
+    show minho training at right
     show ys normal at left:
-        zoom 1.4
+        zoom 1.6
 
     minho "저기요!!"
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "영수대면.mp3"
 
     ys "무슨 일로?"
 
@@ -796,7 +795,9 @@ label confront_youngsu:
 
     minho "혹시 셰프님께서... 저희 악덕식당의 비밀 레시피를 가져가셨나요...!?!?"
 
-    narrator "영수는 처음에 놀란 듯 보였지만 민호의 설명을 듣고 납득하는 듯 싶었다. 하지만 이야기해본 결과 영수는 이 사건과 전혀 관련없는 듯 보였다."
+    narrator "영수는 처음에 놀란 듯 보였지만 민호의 설명을 듣고 납득하는 듯 싶었다. "
+    narrator "하지만 이야기해본 결과 영수는 이 사건과 전혀 관련없는 듯 보였다."
+    ys "악덕식당의 헤드셰프와는 절친한 사이입니다. 부디 꼭 레시피를 찾기를..."
 
 
 
@@ -806,18 +807,30 @@ label after_confrontation:
     narrator "이제 뾰족한 수가 떠오르지 않는다."
     narrator "어느 새 날이 저물었다."
 
+    scene bg nightstreet
+
+    show minho sadtrain at right
+
     minho "어떡하지… 당장 내일 아침이 심사인데…우리 레스토랑은 이제 망하고 나도 잘리는 건가…"
 
     narrator "하루종일 힘들었는지 다리에 힘이 풀려서 주방에 그대로 앉아버렸다."
+    scene bg floor with fade
+
     narrator "앉아서 보니까 조리대 아래에 종잇조각이 있다."
 
     minho "아니 이건?"
 
+    
+
     narrator "세상에!!! 기깔나는 마라로제 푸아그라 조림 레시피라고 써져 있었다!"
-    narrator "설레는 마음으로 민호는 감았던 눈을 조심스레 떠서 레시피를 보았다."
+    narrator "설레는 마음으로 민호는 메모지를 펴서 레시피를 보았다."
     narrator "하지만 거기 적혀 있는 건 조리법도, 재료도 아니었다."
 
-    narrator "\"너만의 요리를 만들어라\""
+    show memo:
+        xalign 0.5
+        yalign 0.5
+    with Dissolve(2)
+
 
     menu:
         "조언을 받아들이다":
@@ -828,10 +841,20 @@ label after_confrontation:
 label happy_ending:
     minho "나는 그동안 잘 만든 레시피를 따라하고 쫓아가는 것에만 집중했다…"
     minho "진짜 중요한 건 나만의 레시피를 만드는 거였구나!"
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "심사당일.mp3"
 
     narrator "미슐랭 심사 날"
+
+
     narrator "민호는 메모를 보고 각성해 밤을 새워가며 획기적인 레시피를 개발해냈다!"
+    show gochi:
+        xalign 0.5
+        yalign 0.5
+    with Dissolve(2)
     narrator "이름하여 고치돈 탕후루! 고구마 치즈 돈까스를 탕후루로 만들어낸 획기적인 음식이다!"
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "해피엔딩.mp3"
 
     narrator "이 음식은 미슐랭 심사에서 역사상 최초로 6스타를 받았고, 민호는 훗날 세계적인 요리사가 되어 자신의 식당을 세우게 된다."
 
@@ -844,6 +867,8 @@ label sad_ending:
 
     narrator "민호는 노력했지만 결국 레시피를 알아내지 못했고, 결국 악덕식당의 미슐랭 등급은 떨어지게 된다."
     narrator "민호는 더 이상 식당에서 일할 수 없다고 생각해 사표를 쓰게 된다."
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "새드엔딩.mp3"
 
     narrator "끝 ㅜㅜ"
 
@@ -860,5 +885,13 @@ label game_over:
             jump start_story_mode
         "아니오":
             return
+
+
+
+style big_text:
+    size 60
+
+style small_text:
+    size 20
 
 

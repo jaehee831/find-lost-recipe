@@ -1497,12 +1497,9 @@ style pref_vbox:
 ## 마우스가 없고 화면이 작을 가능성이 높으므로, 퀵메뉴 버튼의 크기를 키우고 가짓
 ## 수를 줄입니다.
 screen quick_menu():
-    variant "touch"
-
     zorder 100
 
     if quick_menu:
-
         hbox:
             style_prefix "quick"
 
@@ -1510,9 +1507,13 @@ screen quick_menu():
             yalign 1.0
 
             textbutton _("되감기") action Rollback()
+            textbutton _("대사록") action ShowMenu('history')
             textbutton _("넘기기") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("자동진행") action Preference("auto-forward", "toggle")
-            textbutton _("메뉴") action ShowMenu()
+            textbutton _("저장하기") action ShowMenu('save')
+            textbutton _("Q.저장하기") action QuickSave()
+            textbutton _("Q.불러오기") action QuickLoad()
+            textbutton _("설정") action ShowMenu('preferences')
 
 
 style window:
