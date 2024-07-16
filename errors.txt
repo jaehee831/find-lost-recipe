@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 148: The key statement is not a valid child of the input statement.
-    key "K_RETURN" action [Function(send_message), Return("sent")]
-       ^
+File "game/script.rpy", line 322: expected 'comma or end of line' not found.
+    with dissolve
+    ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Tue Jul 16 00:53:01 2024
+Tue Jul 16 17:15:53 2024

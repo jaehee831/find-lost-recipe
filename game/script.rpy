@@ -10,6 +10,33 @@ image 영수 normal = "ys normal.png"
 image 알바생 normal = "alba normal.png"
 
 
+
+# 배경 이미지 정의
+image bg daystreet = "bg daystreet.webp"
+image bg door = "bg door.png"
+image bg dooropen = "bg dooropen.webp"
+image bg inside = "bg inside.png"
+image bg interview = "bg interview.png"
+image bg kitchen = "bg kitchen.png"
+image bg kitchenup = "bg kitchenup.png"
+image bg market = "bg market.webp"
+image bg nightstreet = "bg nightstreet.webp"
+image bg restaurant = "bg restaurant.png"
+image bg rival = "bg rival.png"
+image bg rivalout = "bg rivalout.png"
+image bg room = "bg room.webp"
+image bg roomup = "bg roomup.png"
+image bg taxi = "bg taxi.png"
+image bg chef_room = "bg_chef_room.png"
+image bg path = "bg path.png"
+image bg refrigerator = "bg_refrigerator.png"
+image bg refm = "bg ref memo.png"
+image bg refmemo = "bg memofound"
+image jamul = "자물쇠.png"
+image mara = "mara.webp"
+image gochi = "gochi.webp"
+
+
 init python:
     
 
@@ -78,18 +105,29 @@ default selected_character = ""
 default input_mode = True
 default current_message = ""
 
+image button_start_new = "images/button_start_new.png"
+image button_continue = "images/button_continue.png"
+image button_talk = "images/button_talk.png"
+image button_quit = "images/button_quit.png"
+image bg_opening = "images/오프닝.png"
+
 
 screen main_menu():
     tag menu
-    vbox:
-        xalign 0.5
-        yalign 0.5
-        spacing 20
+    add "bg_opening"
 
-        textbutton "스토리 모드 시작" action [Hide("main_menu"), Jump("start_story_mode")]
-        textbutton "캐릭터와 대화하기" action Show("character_selection")
-        textbutton "종료" action Quit()
+    imagebutton idle "images/button_start_new.png" action [Hide("main_menu"), Jump("start_story_mode")] xpos 250 ypos 700
+    imagebutton idle "images/button_continue.png" action [Hide("main_menu"), Jump("continue_story_mode")] xpos 250 ypos 850 #label 
+    imagebutton idle "images/button_talk.png" action Show("character_selection") xpos 1230 ypos 700
+    imagebutton idle "images/button_quit.png" action Quit() xpos 1230 ypos 850
 
+label continue_story_mode:
+    if renpy.can_load("1"):
+        $ renpy.load("1")
+    else:
+        "No saved game found. Starting a new game."
+        jump start_story_mode
+    return
 # 대화 인터페이스 화면
 
 screen chat_interface():
@@ -193,10 +231,11 @@ define minho = Character("민호", color="#c8ffc8")
 define chef = Character("헤드셰프", color="#c8c8ff")
 define sous = Character("사수", color="#ffc8c8")
 define ys = Character("영수", color="c8ffc8")
+define ab = Character("알바생", color="ffc8ff")
 
 # 배경 이미지 정의
 image bg room = "bg room.webp"
-image bg taxi = "bg taxi.jpg"
+image bg taxi = "bg taxi.png"
 image bg daystreet = "bg daystreet.webp"
 image bg nightstreet = "bg nightstreet.webp"
 
@@ -204,12 +243,23 @@ image bg nightstreet = "bg nightstreet.webp"
 image minho normal = "mino normal.png"
 image minho happy = "mino happy.png"
 image minho sadtrain = "mino sadtrain.png"
+image minho training = "mino training.png"
 image minho depress = "mino depress.png"
 image minho embarassed = "mino embarassed.png"
-image sous happy = "sous norm.png"
+image minho train = "mino training.png"
+image minho doubt = "mino doubt.png"
+image sous norm = "sous norm.png"
+image sous angry = "sous angry.png"
+image sous no = "sous no.png"
 image chef angry = "head angry.png"
 image chef ask = "head ask.png"
+image chef norm = "head normal.png"
 image ys normal = "ys normal.png" 
+image ys angry = "ys angry.png"
+image ys confused = "ys confused.png"
+image ab norm = "alba normal.png"
+image ab con = "alba confused.png"
+image ab dou = "alba doubt.png"
 
 # 게임 시작
 label start:
@@ -217,14 +267,14 @@ label start:
     $ renpy.pause(hard=True)
 
 label start_story_mode:
-    $ chat_history = ""
-    $ conversation_history = [
-        {"role": "system", "content": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 헤드 셰프 너구리다..."},
-        {"role": "assistant", "content": "무슨 일인가?"}
-    ]
+
 
     # 여기서부터 메인 스토리 모드 시작
     scene bg room
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "배경1.mp3"
+    
+    
     show minho sadtrain at right:
         zoom 1.2
     
@@ -238,7 +288,8 @@ label start_story_mode:
     
     narrator "'무시무시하고절대로취업하면안되는좋소악덕식당'이었다."
     
-    narrator "민호는 이름을 보고 두려움을 느꼈지만 달리 선택지가 없었기 때문에 그 식당에 면접을 보러 가게 된다."
+    narrator "민호는 이름을 보고 두려움을 느꼈지만 달리 선택지가 없었기 때문에
+그 식당에 면접을 보러 가게 된다."
     
     narrator "이름은 무시무시했지만 네이버지도에 식당을 검색해보니 생각보다 깔끔하고 평가도 좋았다."
     narrator "그리고 심지어 미슐랭 5스타를 받은 국내에 얼마 안되는 우수한 식당이었던 것이다."
@@ -248,16 +299,26 @@ label start_story_mode:
     scene black
     with fade
 
+    scene bg roomup with fade
+    $ renpy.music.set_volume(1.0, channel='music')
+    play sound "매미.mp3"
+
     narrator "하지만 웬걸, 면접 시간은 아침 9시인데 아침에 일어나보니 이미 시간이 8시반?!"
     narrator "알고보니 민호는 아침 7시가 아니라 저녁 7시로 알람을 맞춰뒀던 것이다…"
+
+    stop sound
 
     scene bg taxi
     with fade
 
     narrator "민호는 부랴부랴 급하게 준비해 택시를 잡고 식당으로 향하게 되는데…"
 
-    scene bg kitchen
-    show 헤드셰프 normal at left:
+    scene bg interview:
+        zoom 1.2 
+    with fade
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "면접.mp3"
+    show chef norm at left:
         zoom 1.3
 
     chef "이름이 뭔가?"
@@ -267,8 +328,10 @@ label start_story_mode:
 
     minho "김민호입니다."
 
-    show chef ask:
+    show chef ask at left:
         zoom 1.3
+    with dissolve
+
 
     chef "면접보러오는데 머리를 안말리고 온건가?"
 
@@ -279,8 +342,9 @@ label start_story_mode:
             jump game_over
 
 label interview_continue:
-    show minho embarassed:
+    show minho embarassed: 
         zoom 1.2
+    with dissolve
 
     minho "죄송합니다. 급하게 나오느라..."
 
@@ -299,12 +363,14 @@ label interview_success:
 
     chef "당근으로 할 수 있는 요리 10가지를 말해봐."
 
-    $ carrot_dishes = renpy.input("당근으로 할 수 있는 요리 10가지???")
+    $ carrot_dishes = renpy.input("당근으로 할 수 있는 요리 10가지를 입력하세요?!?!")
 
     minho "[carrot_dishes] 등이 있습니다."
 
     show chef angry:
         zoom 1.3
+    with dissolve
+    
     chef "형편없군."
     
     show minho depress:
@@ -330,11 +396,16 @@ label interview_success:
 
     show minho depress at left:
         zoom 1.2
-        yalign 1
 
     narrator "민호는 생각했다. 아 면접 망했다…"
 
-    narrator "그리고 일주일이 흐르는데…"
+    narrator "그리고 일주일이 흐르는데…"    
+    $ renpy.music.set_volume(1.0, channel='music')
+
+    play music "배경2.mp3" fadeout 1.0 fadein 1.0   
+    $ renpy.music.set_volume(1.0, channel='music')
+
+    play sound "문자알림.mp3"
 
     "'합격하셨습니다'"
 
@@ -348,21 +419,26 @@ label interview_success:
     scene bg kitchen
     show minho happy at right:
         zoom 1.2
-    show sous happy at left:
+    show sous norm at left:
         zoom 1.2
+
 
     sous "안녕, 너가 민호구나? 내가 너의 사수를 맡은 늑대다. 잘부탁해"
 
     minho "잘부탁드립니다!"
 
-    narrator "친절한 사수까지…!! 민호는 새로운 직장에서의 삶을 기대하기 시작했다."
+    narrator "친절한 사수까지…!! 민호는 새로운 직장에서의 삶을 기대하기 시작했다."  
+    $ renpy.music.set_volume(1.0, channel='music')
+
+    play music "사수.mp3" fadeout 1.0 fadein 1.0
 
     narrator "그.런.데…"
 
     narrator "사수가 뭔가 이상하다..?"
 
-    show 사수 normal at left:
-        zoom 1.2
+    show sous no at left:
+        zoom 1.4
+    with dissolve
 
     sous "민호야, 여기 물걸레로 좀 닦아봐~"
 
@@ -372,9 +448,13 @@ label interview_success:
 
     minho "네, 지금 하겠습니다."
 
+    scene bg inside with fade
+
     sous "민호야 여기 깨진 와인잔좀 치워봐"
 
-    minho "조심해서 치우겠습니다."
+    minho "넵 지금 치우겠습니다."
+
+    scene bg refrigerator with fade
 
     sous "민호야, 냉장고 청소좀 해봐"
 
@@ -384,12 +464,19 @@ label interview_success:
 
     minho "어떤 재료를 가져올까요?"
 
-    sous "민호야 그것도 못해?"
+    show sous no at left:
+        zoom 1.4
+    with dissolve
+
+    sous "민호야 그건 너가 알아서 해야지 ?"
+
+    scene bg kitchen with fade
 
     show minho depress at right:
         zoom 1.2
+    with dissolve
 
-    minho "(헉헉)"
+    minho "........"
 
     narrator "계속 잡일만 시키고 요리랑 관련된건 일체 알려주지도 않는다…"
     
@@ -401,9 +488,11 @@ label interview_success:
 
     narrator "심지어 퇴근 시간이 되자…"
 
-    sous "민호야~ 내가 주방좀 어질러놨는데 정리하고 퇴근해~"
+    show sous angry at left:
+        zoom 1.4
+    with dissolve
 
-    call find_item_game_start
+    sous "민호야~ 내가 주방좀 어질러놨는데 정리하고 퇴근해~"
     
 
     minho "네... 알겠습니다."
@@ -411,19 +500,31 @@ label interview_success:
     hide sous
     show minho normal at center:
         zoom 1.2
+    with dissolve
 
     narrator "민호는 한숨을 쉬며 주방을 둘러보았다. 사수가 어질러놓은 주방은 말 그대로 난장판이었다."
 
-    narrator "민호는 힘들게 주방을 깨끗이 정리했다. 시계를 보니 이미 늦은 밤이었다."
+    narrator "사수가 어질러놓은 주방을 정리하자. 곳곳에 숨겨진 물품을 찾아내면 성공!"
 
-    show minho depress:
+    call find_item_game_start
+
+    scene bg kitchen with fade
+
+    narrator "민호는 힘들게 주방을 깨끗이 정리했다. 시계를 보니 이미 늦은 밤이었다."
+    $ renpy.music.set_volume(1.0, channel='music')
+
+    play music "배경3.mp3"
+
+    show minho depress at left:
         zoom 1.2
+    with dissolve
 
     minho "(한숨) 이럴려고 요리를 배웠나... 나는 이 식당에서 한 명의 구성원으로 인정받고 있긴 한건가..."
 
+    scene bg nightstreet with fade
+
     narrator "그렇게 퀭한 눈으로 오늘도 퇴근하는 민호. 첫 날부터 이렇게 힘들 줄은 몰랐다."
 
-    scene bg nightstreet
     with fade
 
     narrator "민호는 무거운 발걸음으로 집으로 향했다."
@@ -436,15 +537,16 @@ label interview_success:
 # 첫 번째 페이즈 코드는 그대로 유지하고, 두 번째 페이즈 코드를 추가합니다.
 
 label several_months_later:
-    scene bg kitchen
+    scene bg kitchen with fade
     show minho depress at right:
         zoom 1.2
 
-    narrator "그렇게 몇 개월이 흘렀다."
+    narrator "그렇게 4 개월이 흘렀다."
     narrator "하지만 아직도 민호는 요리에는 손도 못 대보고 잡일만 하고 있었다."
 
     show minho depress at center:
         zoom 1.2
+    with dissolve
 
     narrator "슬슬 민호는 지쳐가고 있었다."
 
@@ -453,7 +555,7 @@ label several_months_later:
     narrator "그렇게 퀭한 눈으로 오늘도 퇴근하고 있던 찰나…"
     narrator "헤드 쉐프의 사무실 문틈이 살짝 열려있었다."
 
-    scene bg room
+    scene bg dooropen
     with fade
 
     narrator "그리고 무어라무어라 화내는 소리가 났는데, 민호는 궁금증에 방 앞에 가서 소리를 듣게 된다."
@@ -461,38 +563,40 @@ label several_months_later:
     show chef angry at left:
         zoom 1.3
 
-    chef "큰일났어! 이틀 뒤 심사 볼 마라로제 푸아그라 조림의 레시피가 없어졌어! 당장 2일 뒤에 심사날인데..! 다 잃어버렸어..!!"
+    chef "큰일났다! 2일 뒤 심사날이란 말이야! 끝내주게 맛있는 마라로제푸아그라조림 레시피를 개발했는데! 다 잃어버렸어..!!"
 
     hide chef
     show minho doubt at center:
         zoom 1.2
+    with dissolve
 
-    minho "(생각) 심사… 내일..? 내일 아닌 것 같은데… 일주일 뒤? 언제였지? 심사? 무슨 심사였더라…?"
+    minho "(생각) 심사… 내일..? 내일 아닌 것 같은데… 일주일 뒤? 언제였지? 심사? 레시피? 무슨 레시피였더라…?"
 
     narrator "민호는 너무 당황스러웠던 나머지 아까 들었던 내용을 다 까먹어버리고 말았다!"
 
-    minho "하여간 맨날 까먹는 게 문제야! 민호의 불쌍한 기억력을 도와주자."
+    narrator "학창시절 내내 뒤에서 1등이었던 민호였다! 불쌍한 민호의 기억력을 도와, 조금 전 헤드셰프가 했던 말을 떠올려보자."
 
     call memorial_game_start
 
-    minho "꼭 찾아내고 말겠다고 생각한다."
+    minho "심사는 2일 뒤이고, 마라로제푸아그라조림의 레시피가 사라졌구나...!!"
 
-    scene bg kitchen
+    scene bg refrigerator
     with fade
 
     show minho normal at center:
         zoom 1.2
 
+    scene bg refm
+
     minho "(생각) 어디 있을 만한 장소 없나? 음… 아무래도 냉장고를 봐야지. 냉장고에 재료 넣다가 깜빡하고 레시피도 넣었을 수도 있잖아…"
 
     narrator "냉장고를 열어보는 민호."
 
-    scene bg dooropen
-    with fade
-
-    narrator "민호가 냉장고를 열고, 다양한 재료들 사이에서 중요한 메모를 발견함. 메모는 조각나 있음"
+    narrator "냉장고에는 단서로 보이는 메모 조각들이 있었다. 똑같은 카드를 뒤집어 단서를 전부 찾아내자!"
 
     call card_match_game_start
+
+    scene bg refmemo
 
     minho "이건...! 메모 조각들이야!"
 
@@ -503,34 +607,46 @@ label several_months_later:
     scene bg nightstreet
     with fade
 
+    scene bg door
+
     show minho normal at center:
         zoom 1.2
 
+
     narrator "민호는 모두가 퇴근한 그날 새벽 셰프의 방에 잠입한다…"
+ 
+    show jamul:
+        xalign 0.5
+        yalign 0.5
+    with Dissolve(3)
 
-    minho "그런데 셰프의 방문에는 자물쇠가 걸려 있다..!!"
+    narrator "그런데 셰프의 방문에는 자물쇠가 걸려 있다..!!"
 
-    narrator "민호는 어떻게든 방에 들어가기로 결심한다."
+    narrator "힌트: 이재희 생일"
 
-    scene bg room
-    with fade
     call lock_start
-    with fade
-    "민호는 성공적으로 자물쇠를 열었다."
-    $ renpy.pause(1.0, hard=True)
+
+    scene bg chef_room
 
     narrator "민호는 셰프의 방에 들어왔다."
 
     minho "자, 이제 서랍을 열어보자."
 
+    scene bg drawer with fade
+
+    jump check_drawers
+
+    label check_drawers:
     menu:
         "첫 번째 서랍":
             narrator "아무것도 없다."
             minho "첫 번째 서랍에는 아무것도 없네..."
+            jump check_drawers
 
         "두 번째 서랍":
             narrator "젊었을 때 셰프의 사진과 담배가 있다."
             minho "(생각) 알바생은 담배피면 해고하면서 자기는 피는건가?"
+            jump check_drawers
 
         "마지막 서랍":
             narrator "레시피 북. 혹시나 하는 마음에 레시피를 찾아보지만 역시나 87페이지 푸아그라 조림 레시피만 찢어져 있다."
@@ -543,16 +659,27 @@ label several_months_later:
 
     narrator "민호는 취준생 시절 즐겨읽던 요리 매거진의 한 인터뷰를 떠올린다."
 
-    narrator "< 진짜안무서운대기업식당의 헤드셰프 영수씨는 자기 요리나 레시피에 곰 발바닥 흔적을 남기는 것으로 유명하다. >"
+    narrator "『진짜안무서운대기업식당의 헤드셰프 영수씨는 자기 요리나 레시피에 곰 발바닥 흔적을 남기는 것으로 유명하다.』"
 
     minho "그렇다면...!! 우리를 견제하기 위해서 라이벌 레스토랑의 영수 셰프가 우리 비법 레시피를 훔쳐간거 아냐?"
 
     narrator "의심이 확신으로 변하고 민호는 다음 날 날이 밝자마자 진짜안무서운대기업식당으로 향하기를 결심한다."
 
-    scene bg daystreet
-    with fade
+    scene bg rivalout with fade
 
-    show minho normal at center:
+    show minho training at center:
+        zoom 1.2
+        
+    
+
+    narrator "다음 날 바로 앞에 있는 진짜안무서운대기업식당으로 발걸음을 향하는 민호."
+
+    minho "어떻게 잠입할 것인가?"
+
+label infiltration_options:
+    scene bg rivalout with fade
+
+    show minho training at center:
         zoom 1.2
 
     narrator "다음 날 바로 앞에 있는 진짜안무서운대기업식당으로 발걸음을 향하는 민호."
@@ -570,60 +697,81 @@ label several_months_later:
             jump tv_crew_attempt
 
 label disguise_attempt:
+    show minho training at right
     minho "뭘로 분장하지?"
-    narrator "앞에서 서성거리니까 웨이터가 와서는 손님이신가요? 물어봄."
+    show ab norm at left:
+        zoom 1.5
+    alba "혹시 손님이신가요?"
     minho "앗 아뇨…"
     narrator "mbti I인 민호는 당황해서 그대로 돌아간다."
-    jump infiltration_choice
+    jump infiltration_options
 
 label delivery_attempt:
     minho "쿠팡맨인 척 하고 레스토랑에 들어가는 민호."
+    show minho training at right
     minho "택배 왔습니다~ 주방 좀 들어가겠습니다"
-    "알바생" "저희 택배 시킨거 없는데요?"
-    narrator "주방 알바에게 칼차단당한 민호"
-    jump infiltration_choice
+    show ab con at left:
+        zoom 1.5
+    ab "저희 택배 시킨거.. 없는데요?"
+    show minho sadtrain at right 
+    with fade
+    narrator "당황한 민호는 그대로 튀어버렸다"
+    jump infiltration_options
 
 label tv_crew_attempt:
+    # 이하 코드는 그대로 유지
     minho "안녕하세요 생생정보통에서 사전답사 왔는데요~ 저는 신입 pd 김민ㅎ…우라고 합니다! 잠시 셰프님과 얘기할 수 있을까요?"
-    "알바생" "일단 앉아 계세요"
-    
+    show minho training at right
+    show ab dou at left:
+        zoom 1.5
+
+    ab "...네 일단 앉아계세요~"
+
+    hide ab
+
     narrator "민호는 주방에서 나는 소리에 귀를 기울였다."
 
-    narrator "\"계란이 떨어졌잖아! 어제 주문 수량 확인 안했어?! 하여간 정말…\""
+    ys "\"계란이 떨어졌잖아! 어제 주문 수량 확인 안했어?! 하여간 정말…\""
 
-    minho "(생각) 어느 식당이나 사수한테 혼나는 건 똑같구나…"
+    ab "죄송합니다...죄송합니다........."
 
-    "영수" "안되겠다. 손님 오기 전에 시장에서 계란 좀 사와야겠어."
+    minho "어느 식당이나 혼나는 건 똑같구나…"
+
+    ys "안되겠다. 손님 오기 전에 시장에서 계란 좀 사와야겠어."
 
     narrator "영수 셰프는 시장으로 간다. 민호는 뒤를 밟기로 결심하고 황급히 식당을 나간다."
 
     jump chase_youngsu
 
 label infiltration_choice:
-    narrator "민호는 다시 잠입 방법을 고민한다."
+    narrator "민호는 결국 생생정보통인 척하고 잠입하는게 제일 낫다고 판단한다."
     jump tv_crew_attempt
 
 label chase_youngsu:
     scene bg market
     with fade
 
-    show minho normal at right:
+    show minho training at right:
         zoom 1.2
 
     narrator "민호는 영수를 뒤쫓아 시장으로 향한다."
+
+    narrator "광클해서 영수를 따라잡으세요..!!"
 
     call click_game_start
 
     narrator "영수를 따라잡은 민호! 일단 냅다 어깨를 잡았다."
 
-    show minho normal at right:
+    show minho training at right:
         zoom 1.2
-    show 영수 normal at left:
-        zoom 1.2
+    show ys normal at left:
+        zoom 1.4
 
     minho "저기요!!"
 
     ys "무슨 일로?"
+
+    show minho sadtrain at right
 
     narrator "민호는 쫄았다. 어떻게 할 것인가?"
 
@@ -650,7 +798,7 @@ label confront_youngsu:
 
     narrator "영수는 처음에 놀란 듯 보였지만 민호의 설명을 듣고 납득하는 듯 싶었다. 하지만 이야기해본 결과 영수는 이 사건과 전혀 관련없는 듯 보였다."
 
-    # 여기서 스토리가 계속됩니다...
+
 
     jump after_confrontation
 
@@ -709,7 +857,7 @@ label game_over:
 
     menu:
         "네":
-            jump start
+            jump start_story_mode
         "아니오":
             return
 

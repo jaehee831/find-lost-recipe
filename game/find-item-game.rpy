@@ -95,6 +95,7 @@ screen game:
             thumb_shadow None
 
 label find_item_game_start:
+    window hide
     $ renpy.music.set_volume(1.0, channel='music')
     play music "sounds/find-item.mp3"
 

@@ -1,52 +1,40 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/script.rpy", line 100, in prepare_screen
-    screen chat_interface():
-  File "game/script.rpy", line 100, in prepare
-    screen chat_interface():
-  File "game/script.rpy", line 136, in prepare
-    vbox:
-  File "game/script.rpy", line 136, in prepare
-    vbox:
-  File "game/script.rpy", line 141, in prepare
-    input id "user_input" xalign 0.5 xsize 700:
-  File "game/script.rpy", line 141, in prepare
-    input id "user_input" xalign 0.5 xsize 700:
-  File "game/script.rpy", line 145, in <module>
-    value FieldInputValue("user_input_value")
-TypeError: __init__() missing 1 required positional argument: 'field'
+While running game code:
+  File "game/script.rpy", line 257, in script
+    play music 배경1.mp3
+  File "renpy/common/000statements.rpy", line 124, in execute_play_music
+    renpy.music.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 33, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+  File "game/script.rpy", line 257, in <module>
+    play music 배경1.mp3
+AttributeError: 'str' object has no attribute 'mp3'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\main.py", line 637, in main
-    run(restart)
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\main.py", line 94, in run
-    renpy.display.screen.prepare_screens()
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\display\screen.py", line 1026, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/script.rpy", line 100, in prepare_screen
-    screen chat_interface():
-  File "game/script.rpy", line 100, in prepare
-    screen chat_interface():
-  File "game/script.rpy", line 136, in prepare
-    vbox:
-  File "game/script.rpy", line 136, in prepare
-    vbox:
-  File "game/script.rpy", line 141, in prepare
-    input id "user_input" xalign 0.5 xsize 700:
-  File "game/script.rpy", line 141, in prepare
-    input id "user_input" xalign 0.5 xsize 700:
+  File "game/script.rpy", line 257, in script
+    play music 배경1.mp3
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1971, in execute
+    self.call("execute")
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 1953, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\statements.py", line 349, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 124, in execute_play_music
+    renpy.music.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 33, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
   File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\python.py", line 1202, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 145, in <module>
-    value FieldInputValue("user_input_value")
-TypeError: __init__() missing 1 required positional argument: 'field'
+  File "game/script.rpy", line 257, in <module>
+    play music 배경1.mp3
+AttributeError: 'str' object has no attribute 'mp3'
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.2.3.24061702
 secret 1.0
-Tue Jul 16 00:54:01 2024
+Tue Jul 16 17:01:01 2024
