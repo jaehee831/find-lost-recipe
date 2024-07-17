@@ -1084,7 +1084,7 @@ label happy_ending:
     scene happyend with fade
     narrator "끝!"
 
-    return
+    jump ending_credits
 
 label sad_ending:
     minho "그럴 리가 없어!!! 진짜 레시피를 내놔!!!"
@@ -1105,7 +1105,7 @@ label sad_ending:
     scene bg sadend with fade 
     narrator "다음에는 좀 더 멋진 결말을 얻기를~"
 
-    return
+    jump ending_credits
 
 label game_over:
     scene bg restaurant with fade
@@ -1117,9 +1117,19 @@ label game_over:
         "네":
             jump start_story_mode
         "아니오":
-            return
+            jump ending_credits
 
-
+label ending_credits:
+    scene black with fade
+    $ renpy.pause(1.0)
+    show text "{size=40}제작{/size}\n\n{size=30}백승주\n이재희{/size}" at truecenter with dissolve
+    $ renpy.pause(4.0)
+    hide text with dissolve
+    $ renpy.pause(1.0)
+    show text "{size=40}플레이해주셔서 감사합니다{/size}" at truecenter with dissolve
+    $ renpy.pause(3.0)
+    hide text with dissolve
+    return
 
 style big_text:
     size 60
