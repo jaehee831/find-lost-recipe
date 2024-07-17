@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 122: expected statement.
+    renpy.music.register_channel("background", "music", loop=True)
+                                                                  ^
+
+Ren'Py Version: Ren'Py 8.2.3.24061702
+Wed Jul 17 14:08:19 2024
