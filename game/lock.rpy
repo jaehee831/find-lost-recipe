@@ -24,6 +24,16 @@ screen number_input:
 default input_value = ""
 default correct_answer = 1
 
+# 결과 메시지 화면 정의
+screen result_message(message):
+    frame:
+        align (0.5, 0.5)
+        has vbox
+        text message:
+            size 40
+            xalign 0.5
+            yalign 0.5
+
 label lock_start:
     # 반복 입력 처리
     while True:
@@ -40,9 +50,11 @@ label lock_start:
         $ input_number = int(input_value) if input_value.isdigit() else None
 
         if input_number == correct_answer:
-            e "정답"
+            show screen result_message("정답")
             $ renpy.pause(1.0, hard=True)
+            $ renpy.hide_screen("result_message")
             return  # 여기서 함수를 종료하고 호출한 곳으로 돌아갑니다.
         else:
-            e "오답. 다시 시도하세요."
+            show screen result_message("오답. 다시 시도하세요.")
             $ renpy.pause(1.0, hard=True)
+            $ renpy.hide_screen("result_message")

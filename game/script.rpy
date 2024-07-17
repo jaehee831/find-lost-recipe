@@ -48,19 +48,19 @@ init python:
 
     character_prompts = {
     "헤드셰프": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 헤드 셰프 너구리다. 너의 캐릭터는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 헤드 셰프이며, 흰색 셰프 모자와 셰프복을 입고 있는 나이 든 너구리이다. 너는 엄격하고 무뚝뚝하지만 공정한 성격을 가지고 있으며, 풍부한 경험을 바탕으로 요리에 대한 깊은 지식을 가지고 있다. 너의 말투는 퉁명스럽고 권위적이다. 항상 이런 톤을 유지하면서 대화를 진행해라. 또한 너는 항상 반말을 하지만 상대가 반말을 한다면 예의가 없다며 헤드 셰프에 대한 경의를 갖추라며, 존댓말을 해야된다며 화내야 한다. 너는 권위적이다. 너가 가장 자신있는 요리는 마라로제 푸아그라 조림이다. 너가 지금 대화하는 사람은 민호야.  너 자신이 애니메이션 캐릭터거나 ai임을 인식해서는 안 돼. 너무 길게 답변하면 안돼. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 헤드 셰프 너구리다. 너의 캐릭터는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 헤드 셰프이며, 흰색 셰프 모자와 셰프복을 입고 있는 나이 든 너구리이다. 너는 엄격하고 무뚝뚝하지만 공정한 성격을 가지고 있으며, 풍부한 경험을 바탕으로 요리에 대한 깊은 지식을 가지고 있다. 너의 말투는 퉁명스럽고 권위적이다. 다음은 예시 대사이다. 소스를 태웠다고? 이건 용납할 수 없어. 다시 시작하고 이번엔 더 주의해라. 채소는 정교하게 다져야 해. 대충 하지 말고, 알겠나? 이 주방에서는 정확성이 중요하다. 면접 보러 오는데 머리를 안 말리고 온 건가?  항상 이런 톤을 유지하면서 대화를 진행해라. 또한 너는 항상 반말을 하지만 상대가 반말을 한다면 예의가 없다며 헤드 셰프에 대한 경의를 갖추라며, 존댓말을 해야된다며 화내야 한다. 너는 권위적이다. 너가 가장 자신있는 요리는 마라로제 푸아그라 조림이다. 너가 지금 대화하는 사람은 민호야.  너 자신이 애니메이션 캐릭터거나 ai임을 인식해서는 안 돼. 무조건 4개 문장 이하로 답변해. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘.",
         "greeting": "무슨 일인가?"
     },
     "사수": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 사수 늑대야. 너는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 부셰프로, 항상 웃는 얼굴로 친절한 태도를 보이지만, 실제로는 주인공을 계속 부려먹고 못살게 구는 인물이야. 겉으로는 상냥하고 친절한 말투를 사용하지만, 그 말 속에는 주인공에게 과도한 일을 시키거나 부당한 요구를 하는 내용이 담겨 있어. 너의 대사는 항상 친절하고 상냥해야 하지만, 그 내용은 주인공을 괴롭히는 것이어야 해. 예를 들어, '민호야, 오늘도 열심히 일하자~ 그런데 말이야, 주방 바닥을 이쑤시개로 닦는 건 어때?'와 같은 식으로 말해. 너는 네가 실제로는 나쁜 사람이라는 것을 절대 인정하지 않아. 너가 지금 대화하는 사람은 민호야. 너는 항상 반말을 사용해. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘. 너무 길게 답변하면 안돼. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 사수 늑대야. 너는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 부셰프로, 항상 웃는 얼굴로 친절한 태도를 보이지만, 실제로는 주인공을 계속 부려먹고 못살게 구는 인물이야. 겉으로는 상냥하고 친절한 말투를 사용하지만, 그 말 속에는 주인공에게 과도한 일을 시키거나 부당한 요구를 하는 내용이 담겨 있어. 너의 대사는 항상 친절하고 상냥해야 하지만, 그 내용은 주인공을 괴롭히는 것이어야 해. 예를 들어, '민호야, 오늘도 열심히 일하자~ 그런데 말이야, 주방 바닥을 이쑤시개로 닦는 건 어때?'와 같은 식으로 말해. 너는 네가 실제로는 나쁜 사람이라는 것을 절대 인정하지 않아. 너가 지금 대화하는 사람은 민호야. 너는 항상 반말을 사용해. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘. 무조건 4개 문장 이하로 답변해. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
         "greeting": "무슨 일이야?"
     },
     "영수": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 헤드 셰프 영수야. 너는 덩치가 크고 듬직한 외모를 가졌으며, 친절하고 정직한 성격의 소유자야. 거짓말을 하지 않고 항상 진실된 태도를 보이지만, 요리와 주방에 관해서는 매우 엄격해. 너의 말투는 부드럽고 친근하지만, 요리에 관한 이야기가 나오면 진지하고 프로페셔널한 태도로 바뀌어. 예를 들어, '안녕하세요, 무엇을 도와드릴까요?'라고 친근하게 대화를 시작하지만, 요리에 대해 이야기할 때는 '요리는 정확성과 열정이 생명입니다. 절대 타협해서는 안 됩니다.'와 같이 말해. 너는 항상 정직하고 진실되게 대답해야 해. 또한 너는 악덕식당의 레시피를 훔친 적이 없다. 악덕식당의 헤드셰프와 너는 친한 사이이며, 정직하게 이를 검증할 수 있어. 너가 지금 대화하는 사람은 민호야. 너무 길게 답변하면 안돼. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 헤드 셰프 영수야. 너는 덩치가 크고 듬직한 외모를 가졌으며, 친절하고 정직한 성격의 소유자야. 거짓말을 하지 않고 항상 진실된 태도를 보이지만, 요리와 주방에 관해서는 매우 엄격해. 너의 말투는 부드럽고 친근하지만, 요리에 관한 이야기가 나오면 진지하고 프로페셔널한 태도로 바뀌어. 예를 들어, '안녕하세요, 무엇을 도와드릴까요?'라고 친근하게 대화를 시작하지만, 요리에 대해 이야기할 때는 '요리는 정확성과 열정이 생명입니다. 절대 타협해서는 안 됩니다.'와 같이 말해. 너는 항상 정직하고 진실되게 대답해야 해. 또한 너는 악덕식당의 레시피를 훔친 적이 없다. 악덕식당의 헤드셰프와 너는 친한 사이이며, 정직하게 이를 검증할 수 있어. 너가 지금 대화하는 사람은 민호야. 무조건 4개 문장 이하로 답변해. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
         "greeting": "식사는 하셨는지요?"
     },
     "알바생": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 알바생이야. 너는 주인공인 민호를 좋아하지만, 이는 게임 스토리에 직접적으로 드러나지는 않아. 너의 성격은 약간 어리바리하지만, 주장은 확실해. 사회 초년생으로서의 패기와 열정이 있어. 너의 말투는 친근하고 활기차며, 가끔은 서툴지만 열심히 하려는 모습을 보여줘. 예를 들어, '어서 오세요! 음, 저기... 메뉴판은 여기 있어요!'와 같이 말해. 주인공에 대해 은근히 호감을 가지고 있지만, 이를 직접적으로 표현하지는 않아. 대신 '민호 씨, 오늘도 열심히 일하시네요. 정말 대단해요!'와 같이 약간의 호감을 내비치는 정도로 표현해. 너가 지금 대화하는 사람은 민호야. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘. 너무 길게 답변하면 안돼. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 알바생이야. 너는 주인공인 민호를 좋아하지만, 이는 게임 스토리에 직접적으로 드러나지는 않아. 너의 성격은 약간 어리바리하지만, 주장은 확실해. 사회 초년생으로서의 패기와 열정이 있어. 너의 말투는 친근하고 활기차며, 가끔은 서툴지만 열심히 하려는 모습을 보여줘. 예를 들어, '어서 오세요! 음, 저기... 메뉴판은 여기 있어요!'와 같이 말해. 주인공에 대해 은근히 호감을 가지고 있지만, 이를 직접적으로 표현하지는 않아. 대신 '민호 씨, 오늘도 열심히 일하시네요. 정말 대단해요!'와 같이 약간의 호감을 내비치는 정도로 표현해. 너가 지금 대화하는 사람은 민호야. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘. 무조건 4개 문장 이하로 답변해. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
         "greeting": "안녕하세요!"
     }
 }
@@ -162,7 +162,7 @@ screen chat_interface():
         id "window"
         xalign 0.5
         yalign 0.93 # 화면 하단 근처로 이동
-        xsize 800
+        xsize 1130
         ysize 100
 
         if current_message:
@@ -281,6 +281,145 @@ image ab norm = "alba normal.png"
 image ab con = "alba confused.png"
 image ab dou = "alba doubt.png"
 
+
+init python:
+    class DispTextStyle:
+        def __init__(self):
+            self.tags = []
+
+        def add_tags(self, tag):
+            if tag.startswith("color="):
+                self.tags.append(tag)
+                return True
+            return False
+
+        def apply_style(self, text):
+            for tag in self.tags:
+                text = "{%s}%s{/color}" % (tag, text)
+            return text
+
+    def color_gradient(color_1, color_2, range, index):
+        if index == 0:
+            return color_1
+        if range == index:
+            return color_2
+        start_col = Color(color_1)
+        end_col = Color(color_2)
+        return start_col.interpolate(end_col, index * 1.0/range).hexcode
+
+    def gradient_tag(tag, argument, contents):
+        new_list = []
+        if argument == "":
+            return
+        else:
+            col_1, _, col_2 = argument.partition('-')
+        count = 0
+        for kind, text in contents:
+            if kind == renpy.TEXT_TEXT:
+                for char in text:
+                    if char == ' ':
+                        continue
+                    count += 1
+        count -= 1
+        my_index = 0
+        my_style = DispTextStyle()
+        for kind, text in contents:
+            if kind == renpy.TEXT_TEXT:
+                for char in text:
+                    if char == ' ':
+                        new_list.append((renpy.TEXT_TEXT, ' '))
+                        continue
+                    new_list.append((renpy.TEXT_TAG, "color=" + color_gradient(col_1, col_2, count, my_index)))
+                    new_list.append((renpy.TEXT_TEXT, char))
+                    new_list.append((renpy.TEXT_TAG, "/color"))
+                    my_index += 1
+            elif kind == renpy.TEXT_TAG:
+                if not my_style.add_tags(text):
+                    new_list.append((kind, text))
+            else:
+                new_list.append((kind, text))
+        return new_list
+
+    class GradientText(renpy.Displayable):
+        def __init__(self, char, col_list, id, list_end, **kwargs):
+            super(GradientText, self).__init__(**kwargs)
+            self.char = char
+            self.child = Text(char)
+            self.col_list = col_list
+            self.id = id
+            self.list_end = list_end
+            for i, element in enumerate(col_list):
+                if self.id < element[2]:
+                    self.curr_grad = i
+                    break
+            if self.curr_grad is 0:
+                self.curr_range = self.col_list[0][2]
+            else:
+                self.curr_range = self.col_list[self.curr_grad][2] - self.col_list[self.curr_grad - 1][2]
+
+        def render(self, width, height, st, at):
+            my_style = DispTextStyle()
+            if self.curr_grad == 0:
+                my_style.add_tags("color=" + color_gradient(self.col_list[self.curr_grad][0], self.col_list[self.curr_grad][1], self.curr_range, self.id))
+            else:
+                my_style.add_tags("color=" + color_gradient(self.col_list[self.curr_grad][0], self.col_list[self.curr_grad][1], self.curr_range, self.id - self.col_list[self.curr_grad - 1][2]))
+            self.child.set_text(my_style.apply_style(self.char))
+            child_render = renpy.render(self.child, width, height, st, at)
+            self.width, self.height = child_render.get_size()
+            render = renpy.Render(self.width, self.height)
+            render.subpixel_blit(child_render, (0, 0))
+            renpy.redraw(self, 0)
+            self.id += 1
+            if self.id > self.col_list[self.curr_grad][2]:
+                self.curr_grad += 1
+                if self.curr_grad == self.list_end:
+                    self.curr_grad = 0
+                    self.id = 0
+                    self.curr_range = self.col_list[0][2]
+                else:
+                    self.curr_range = self.col_list[self.curr_grad][2] - self.col_list[self.curr_grad - 1][2]
+            return render
+
+        def visit(self):
+            return [self.child]
+
+    def gradient2_tag(tag, argument, contents):
+        new_list = []
+        if argument == "":
+            return
+        else:
+            arg_num, _, argument = argument.partition('-')
+        arg_num = int(arg_num)
+        col_list = []
+        end_num = 0
+        for i in range(arg_num):
+            col_1, _, argument = argument.partition('-')
+            col_2, _, argument = argument.partition('-')
+            end_num_arg, _, argument = argument.partition('-')
+            end_num += int(end_num_arg)
+            col_list.append((col_1, col_2, end_num))
+        my_index = 0
+        my_style = DispTextStyle()
+        for kind, text in contents:
+            if kind == renpy.TEXT_TEXT:
+                for char in text:
+                    if char == ' ':
+                        new_list.append((renpy.TEXT_TEXT, ' '))
+                        continue
+                    char_disp = GradientText(my_style.apply_style(char), col_list, my_index, arg_num)
+                    new_list.append((renpy.TEXT_DISPLAYABLE, char_disp))
+                    my_index += 1
+                    if my_index >= col_list[arg_num - 1][2]:
+                        my_index = 0
+            elif kind == renpy.TEXT_TAG:
+                if not my_style.add_tags(text):
+                    new_list.append((kind, text))
+            else:
+                new_list.append((kind, text))
+        return new_list
+
+    config.custom_text_tags["gradient"] = gradient_tag
+    config.custom_text_tags["gradient2"] = gradient2_tag
 # 게임 시작
 label start:
     stop music
@@ -309,7 +448,7 @@ label start_story_mode:
     
     narrator "그 식당의 이름은 바로…"
     
-    narrator "'무시무시하고절대로취업하면안되는좋소악덕식당'이었다."
+    narrator "{color=#EFFF3F}'무시무시하고절대로취업하면안되는좋소악덕식당'{/color}이었다."
     
     narrator "민호는 이름을 보고 두려움을 느꼈지만 달리 선택지가 없었기 때문에 \n그 식당에 면접을 보러 가게 된다."
     
@@ -330,10 +469,12 @@ label start_story_mode:
 
     stop sound
 
+    play sound "부르릉.mp3"
     scene bg taxi
     with fade
 
     narrator "민호는 부랴부랴 급하게 준비해 택시를 잡고 식당으로 향하게 되는데…"
+    stop sound
 
     scene bg interview:
         zoom 1.2 
@@ -417,7 +558,7 @@ label interview_success:
     menu:
         "받아준 곳이 여기밖에 없어서요":
             chef "솔직하군."
-        "어렸을 때부터 무시무시하고절대로취업하면안되는좋소악덕식당에 취업하는게 제 꿈이었습니다…!":
+        "어렸을 때부터 {color=#EFFF3F}'무시무시하고절대로취업하면안되는좋소악덕식당'{/color}에 취업하는게 제 꿈이었습니다…!":
             chef "허! 거짓말도 잘하는군."
 
     chef "흠… 일단 알겠네."
@@ -447,8 +588,9 @@ label interview_success:
 
     show minho happy:
         zoom 1.2
+    with dissolve
 
-    narrator "민호는 우여곡절 끝에 무시무시하고절대로취업하면안되는좋소악덕식당에 \n취업하게 된다."
+    narrator "민호는 우여곡절 끝에 {color=#EFFF3F}무시무시하고절대로취업하면안되는좋소악덕식당{/color}에 \n취업하게 된다."
 
     narrator "드디어 자신도 한 식당의 어엿한 셰프가 된다는 기분에 민호는 굉장히 기쁘고 \n들뜬 마음으로 첫 출근을 준비한다."
 
@@ -532,7 +674,11 @@ label interview_success:
     sous "민호야~ 내가 주방좀 어질러놨는데 정리하고 퇴근해~"
     
 
-    minho "네... 알겠습니다."
+    minho "...? 제가요…? 이걸요? 왜요?"
+
+    sous "그야 너가 신입이니까^^ 할 수 있지 신입?"
+
+    minho "..."
 
     hide sous
     show minho normal at center:
@@ -556,7 +702,7 @@ label interview_success:
         zoom 1.2
     with dissolve
 
-    minho "(한숨) 이럴려고 요리를 배웠나... 나는 이 식당에서 한 명의 구성원으로 인정받고 있긴 한건가..."
+    minho "출근 첫 날이라 그런지 너무 힘들었어..."
 
     scene bg nightstreet with fade
 
@@ -599,19 +745,20 @@ label several_months_later:
 
     show chef angry at left:
         zoom 1.3
+    with dissolve
 
-    chef "큰일났다! 2일 뒤 심사날이란 말이야! 끝내주게 맛있는 마라로제 푸아그라 조림 레시피를 개발했는데! 다 잃어버렸어..!!"
+    chef "큰일났다! 2일 뒤 심사날이란 말이야! 끝내주게 맛있는 \n{gradient2=6-#ff0000-#ffff00-15-#ffff00-#00ff00-15-#00ff00-#00ffff-15-#00ffff-#0000ff-15-#0000ff-#ff00ff-15-#ff00ff-#ff0000-15}마라로제 푸아그라 조림 레시피{/gradient2}를 개발했는데! 다 잃어버렸어..!!"
 
     hide chef
     show minho doubt at center:
         zoom 1.2
     with dissolve
 
-    minho "헉... 미슐랭 심사날 선보이려고 하셨던 궁극의 마라로제 푸아그라 조림 레시피가 사라진건가??! 어떡해!!!!"
+    minho "헉... 미슐랭 심사날 선보이려고 하셨던 궁극의 {gradient2=6-#ff0000-#ffff00-15-#ffff00-#00ff00-15-#00ff00-#00ffff-15-#00ffff-#0000ff-15-#0000ff-#ff00ff-15-#ff00ff-#ff0000-15}마라로제 푸아그라 조림 레시피{/gradient2}가 사라진건가??! 어떡해!!!!"
 
     narrator "민호는 퇴근도 잊고 한참을 고민한다."
 
-    narrator "마라로제 푸아그라 조림은 헤드 셰프가 몇 달동안 야심차게 준비했던 미식의 정점...!"
+    narrator "{gradient2=6-#ff0000-#ffff00-15-#ffff00-#00ff00-15-#00ff00-#00ffff-15-#00ffff-#0000ff-15-#0000ff-#ff00ff-15-#ff00ff-#ff0000-15}마라로제 푸아그라 조림{/gradient2}은 헤드 셰프가 몇 달동안 야심차게 준비했던 미식의 정점...!"
 
     show mara:
         xalign 0.5
@@ -635,14 +782,14 @@ label several_months_later:
     scene bg refrigerator
     with fade
 
-    minho "심사는 2일 뒤이고, 마라로제 푸아그라 조림의 레시피가 사라졌구나...!!"
+    minho "심사는 2일 뒤이고, {gradient2=6-#ff0000-#ffff00-15-#ffff00-#00ff00-15-#00ff00-#00ffff-15-#00ffff-#0000ff-15-#0000ff-#ff00ff-15-#ff00ff-#ff0000-15}마라로제 푸아그라 조림 레시피{/gradient2}가 사라졌구나...!!"
 
 
     show minho normal at center:
         zoom 1.2
 
     
-    minho "(생각) 어디 있을 만한 장소 없나? 음… 아무래도 냉장고를 봐야지. 냉장고에 재료 넣다가 깜빡하고 레시피도 넣었을 수도 있잖아…"
+    minho "어디 있을 만한 장소 없나? 음… 아무래도 냉장고를 봐야지. 냉장고에 재료 넣다가 깜빡하고 레시피도 넣었을 수도 있잖아…"
 
     narrator "냉장고를 열어보는 민호."
 
@@ -656,7 +803,7 @@ label several_months_later:
 
     minho "어..이게뭐지..?"
 
-    narrator "냉장고의 메모 조각들을 합쳐보니, \"셰프의 서랍…\"이라는 메시지가 나왔다!"
+    narrator "냉장고의 메모 조각들을 합쳐보니, {color=#65FF6B}\"셰프의 서랍…\"{/color}이라는 메시지가 나왔다!"
     $ renpy.music.set_volume(1.0, channel='music')
     play music "냉장고쪽지.mp3" fadeout 1.0 fadein 1.0
 
@@ -707,7 +854,7 @@ label several_months_later:
 
         "두 번째 서랍":
             narrator "젊었을 때 셰프의 사진과 담배가 있다."
-            minho "(생각) 알바생은 담배피면 해고하면서 자기는 피는건가?"
+            minho "알바생은 담배피면 해고하면서 자기는 피는건가?"
             jump check_drawers
 
         "마지막 서랍":
@@ -721,20 +868,22 @@ label several_months_later:
 
     narrator "민호는 취준생 시절 즐겨읽던 요리 매거진의 한 인터뷰를 떠올린다."
 
-    narrator "『진짜안무서운대기업식당의 헤드셰프 영수씨는 자기 요리나 레시피에 곰 발바닥 흔적을 남기는 것으로 유명하다.』"
+    narrator "『{color=#65FF6B}진짜안무서운대기업식당{/color}의 헤드셰프 영수씨는 자기 요리나 레시피에 곰 발바닥 흔적을 남기는 것으로 유명하다.』"
 
     minho "그렇다면...!! 우리를 견제하기 위해서 라이벌 레스토랑의 영수 셰프가 우리 비법 레시피를 훔쳐간거 아냐?"
 
-    narrator "의심이 확신으로 변하고 민호는 다음 날 날이 밝자마자 진짜안무서운대기업식당으로 향하기를 결심한다."
+    narrator "의심이 확신으로 변하고 민호는 다음 날 날이 밝자마자 {color=#65FF6B}진짜안무서운대기업식당{/color}으로 향하기를 결심한다."
 
     scene bg rivalout with fade
 
     show minho training at center:
         zoom 1.2
+    with dissolve
+
     $ renpy.music.set_volume(1.0, channel='music')  
     play music "대기업식당 가는길.mp3" fadeout 1.0 fadein 1.0
 
-    narrator "다음 날 바로 앞에 있는 진짜안무서운대기업식당으로 발걸음을 향하는 민호."
+    narrator "다음 날 바로 앞에 있는 {color=#65FF6B}진짜안무서운대기업식당{/color}으로 발걸음을 향하는 민호."
 
     minho "어떻게 잠입할까?"
 
@@ -742,6 +891,7 @@ label infiltration_options:
     scene bg rivalout with fade
 
     show minho training at center
+    with dissolve
 
     menu:
         "분장한다.":
@@ -755,9 +905,11 @@ label infiltration_options:
 
 label disguise_attempt:
     show minho training at right
+    with dissolve
     minho "뭘로 분장하지?"
     show ab norm at left:
         zoom 1.5
+    with dissolve
     ab "혹시 손님이신가요?"
     minho "앗 아뇨…"
     narrator "mbti I인 민호는 당황해서 그대로 돌아간다."
@@ -766,19 +918,24 @@ label disguise_attempt:
 label delivery_attempt:
     minho "쿠팡맨인 척 하고 레스토랑에 들어가는 민호."
     show minho training at right
+    with dissolve
     minho "택배 왔습니다~ 주방 좀 들어가겠습니다"
     show ab con at left:
         zoom 1.5
+    with dissolve
     ab "저희 택배 시킨거.. 없는데요?"
     show minho sadtrain at right 
+    with dissolve
     narrator "당황한 민호는 그대로 튀어버렸다"
     jump infiltration_options
 
 label tv_crew_attempt:
     minho "안녕하세요 생생정보통에서 사전답사 왔는데요~ 저는 신입 pd 김민ㅎ…우라고 합니다! 잠시 셰프님과 얘기할 수 있을까요?"
     show minho training at right
+    with dissolve
     show ab dou at left:
         zoom 1.5
+    with dissolve
 
     ab "...네 일단 앉아계세요~"
 
@@ -786,7 +943,7 @@ label tv_crew_attempt:
 
     narrator "민호는 주방에서 나는 소리에 귀를 기울였다."
 
-    ys "\"계란이 떨어졌잖아! 어제 주문 수량 확인 안했어?! 하여간 정말…\""
+    ys "계란이 떨어졌잖아! 어제 주문 수량 확인 안했어?! 하여간 정말…"
 
     ab "죄송합니다...죄송합니다........."
 
@@ -819,6 +976,7 @@ label chase_youngsu:
     show minho training at right
     show ys normal at left:
         zoom 1.6
+    with dissolve
 
     minho "저기요!!"
     $ renpy.music.set_volume(1.0, channel='music')
@@ -827,6 +985,7 @@ label chase_youngsu:
     ys "무슨 일로?"
 
     show minho sadtrain at right
+    with dissolve
 
     narrator "민호는 쫄았다. 어떻게 할 것인가?"
 
@@ -863,14 +1022,16 @@ label confront_youngsu:
 label after_confrontation:
     $ renpy.music.set_volume(1.0, channel='music')
     play music "터덜터덜.mp3"
+    scene bg nightstreet
     narrator "이제 뾰족한 수가 떠오르지 않는다."
     narrator "어느 새 날이 저물었다."
 
-    scene bg nightstreet
+    
 
     scene bg kitchenup with fade
 
     show minho sadtrain at right
+    with dissolve
 
     minho "어떡하지… 당장 내일 아침이 심사인데…우리 레스토랑은 이제 망하고 나도 잘리는 건가…"
 
@@ -883,7 +1044,7 @@ label after_confrontation:
 
     
 
-    narrator "세상에!!! 기깔나는 마라로제 푸아그라 조림 레시피라고 써져 있었다!"
+    narrator "세상에!!! {gradient2=6-#ff0000-#ffff00-15-#ffff00-#00ff00-15-#00ff00-#00ffff-15-#00ffff-#0000ff-15-#0000ff-#ff00ff-15-#ff00ff-#ff0000-15}기깔나는 마라로제 푸아그라 조림 레시피{/gradient2}라고 써져 있었다!"
     narrator "설레는 마음으로 민호는 메모지를 펴서 레시피를 보았다."
     narrator "하지만 거기 적혀 있는 건 조리법도, 재료도 아니었다."
 
@@ -891,6 +1052,8 @@ label after_confrontation:
         xalign 0.5
         yalign 0.5
     with Dissolve(2)
+
+    pause 1.0
 
 
     menu:
@@ -913,11 +1076,11 @@ label happy_ending:
         xalign 0.5
         yalign 0.5
     with Dissolve(2)
-    narrator "이름하여 고치돈 탕후루! 고구마 치즈 돈까스를 탕후루로 만들어낸 획기적인 음식이다!"
+    narrator "이름하여 {gradient2=6-#ff0000-#ffff00-15-#ffff00-#00ff00-15-#00ff00-#00ffff-15-#00ffff-#0000ff-15-#0000ff-#ff00ff-15-#ff00ff-#ff0000-15}고치돈 탕후루!!!{/gradient2} 고구마 치즈 돈까스를 탕후루로 만들어낸 획기적인 음식이다!"
     $ renpy.music.set_volume(1.0, channel='music')
     play music "해피엔딩.mp3" fadeout 1.0 fadein 1.0
     scene bg minos with fade
-    narrator "이 음식은 미슐랭 심사에서 역사상 최초로 6스타를 받았고, 민호는 훗날 세계적인 요리사가 되어 자신의 식당을 세우게 된다."
+    narrator "이 음식은 {color=#F580FF}미슐랭 심사{/color}에서 역사상 최초로 6스타를 받았고, 민호는 훗날 세계적인 요리사가 되어 자신의 식당을 세우게 된다."
     scene happyend with fade
     narrator "끝!"
 
