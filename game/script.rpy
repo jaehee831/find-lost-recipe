@@ -9,7 +9,7 @@ image 사수 normal = "sous norm.png"
 image 영수 normal = "ys normal.png"
 image 알바생 normal = "alba normal.png"
 
-
+image mess = "message.png"
 # 배경 이미지 정의
 image bg daystreet = "bg daystreet.webp"
 image bg door = "bg door.png"
@@ -31,11 +31,13 @@ image bg path = "bg path.png"
 image bg refrigerator = "bg_refrigerator.png"
 image bg refm = "bg ref memo.png"
 image bg refmemo = "bg memofound"
-image jamul = "자물쇠.png"
+image jamul = "locked.png"
+image cler = "clear.png"
 image mara = "mara.webp"
 image gochi = "gochi.webp"
 image memo = "memo.png"
-
+image bg minos = "minos.png"
+image bg angry = "angrymc.webp"
 
 init python:
 
@@ -60,8 +62,6 @@ init python:
         "greeting": "안녕하세요!"
     }
 }
-
-
 
         headers = {
             "Content-Type": "application/json",
@@ -110,15 +110,22 @@ image button_talk = "images/button_talk.png"
 image button_quit = "images/button_quit.png"
 image bg_opening = "images/오프닝.png"
 
+label splashscreen:
+    $ renpy.music.stop(channel='music', fadeout=1.0)
+    $ renpy.music.play("audio/오프닝.mp3", channel='music', loop=True)
+    return
+
 
 screen main_menu():
     tag menu
+    $ renpy.music.stop(channel='music', fadeout=1.0)
+    $ renpy.music.play("audio/오프닝.mp3", channel='music', loop=True, fadein=1.0)
     add "bg_opening"
 
-    imagebutton idle "images/button_start_new.png" action [Hide("main_menu"), Jump("start_story_mode")] xpos 250 ypos 700
-    imagebutton idle "images/button_continue.png" action [Hide("main_menu"), Jump("continue_story_mode")] xpos 250 ypos 850 #label 
-    imagebutton idle "images/button_talk.png" action Show("character_selection") xpos 1230 ypos 700
-    imagebutton idle "images/button_quit.png" action Quit() xpos 1230 ypos 850
+    imagebutton auto "images/button_start_new_%s.png" action [Play("audio", "sounds/click.mp3"), Hide("main_menu"), Jump("start_story_mode")] xpos 250 ypos 700
+    imagebutton auto "images/button_continue_%s.png" action [Play("audio", "sounds/click.mp3"), Hide("main_menu"), Jump("continue_story_mode")] xpos 250 ypos 850 #label 
+    imagebutton auto "images/button_talk_%s.png" action [Play("audio", "sounds/click.mp3"), Show("character_selection")] xpos 1230 ypos 700
+    imagebutton auto "images/button_quit_%s.png" action [Play("audio", "sounds/click.mp3"), Quit()] xpos 1230 ypos 850
 
 label continue_story_mode:
     if renpy.can_load("1"):
@@ -162,7 +169,7 @@ screen chat_interface():
         if current_message:
             text current_message:
                 yalign 0.0  # 텍스트를 window의 상단에 정렬
-                yoffset -170
+                yoffset -120
 
     # 입력 부분
     vbox:
@@ -183,7 +190,18 @@ screen chat_interface():
 
 label chat_loop:
     $ current_message = ""
-    
+    if selected_character == "헤드셰프":
+        $ renpy.music.set_volume(1.0, channel='music')
+        play music "면접.mp3"
+    elif selected_character == "사수":
+        $ renpy.music.set_volume(1.0, channel='music')
+        play music "배경2.mp3"
+    elif selected_character == "영수":
+        $ renpy.music.set_volume(1.0, channel='music')
+        play music "배경3.mp3"
+    elif selected_character == "알바생":
+        $ renpy.music.set_volume(1.0, channel='music')
+        play music "배경1.mp3"
     while True:
         call screen chat_interface
         if _return == "sent":
@@ -265,6 +283,7 @@ image ab dou = "alba doubt.png"
 
 # 게임 시작
 label start:
+    $ renpy.music.stop(channel='music', fadeout=1.0)
     show screen main_menu
     $ renpy.pause(hard=True)
 
@@ -317,15 +336,25 @@ label start_story_mode:
     scene bg interview:
         zoom 1.2 
     with fade
+
+    show minho depress:
+        zoom 1.2
+    
+    minho "여기가 면접장...? 주방에서 면접을 보네..."
+    minho "그래도 긴장된다..."
+
+
     $ renpy.music.set_volume(1.0, channel='music')
-    play music "면접.mp3"
+    play music "면접.mp3" fadeout 1.0 fadein 1.0
+    show minho normal at right:
+        zoom 1.2
+    
     show chef norm at left:
         zoom 1.3
 
     chef "이름이 뭔가?"
 
-    show minho normal at right:
-        zoom 1.2
+
 
     minho "김민호입니다."
 
@@ -408,12 +437,15 @@ label interview_success:
 
     play sound "문자알림.mp3"
 
-    "'합격하셨습니다'"
+    show mess:
+        xalign 0.5
+        yalign 0.5
+    with Dissolve(1)
 
     show minho happy:
         zoom 1.2
 
-    narrator "민호는 우여곡절 끝에 무시무시하고절대로취업하면안되는좋소악덕식당(이하 악덕식당)에 취업하게 된다."
+    narrator "민호는 우여곡절 끝에 무시무시하고절대로취업하면안되는좋소악덕식당에 취업하게 된다."
 
     narrator "드디어 자신도 한 식당의 어엿한 셰프가 된다는 기분에 민호는 굉장히 기쁘고 들뜬 마음으로 첫 출근을 준비한다."
 
@@ -421,7 +453,7 @@ label interview_success:
     show minho happy at right:
         zoom 1.2
     show sous norm at left:
-        zoom 1.2
+        zoom 1.4
 
 
     sous "안녕, 너가 민호구나? 내가 너의 사수를 맡은 늑대다. 잘부탁해"
@@ -449,7 +481,8 @@ label interview_success:
 
     minho "네, 지금 하겠습니다."
 
-    scene bg inside with fade
+    scene bg inside with fade:
+        zoom 1.2
 
     sous "민호야 여기 깨진 와인잔좀 치워봐"
 
@@ -514,7 +547,7 @@ label interview_success:
     narrator "민호는 힘들게 주방을 깨끗이 정리했다. 시계를 보니 이미 늦은 밤이었다."
     $ renpy.music.set_volume(1.0, channel='music')
 
-    play music "배경3.mp3"
+    play music "배경3.mp3" fadeout 1.0 fadein 1.0
 
     show minho depress at left:
         zoom 1.2
@@ -525,8 +558,6 @@ label interview_success:
     scene bg nightstreet with fade
 
     narrator "그렇게 퀭한 눈으로 오늘도 퇴근하는 민호. 첫 날부터 이렇게 힘들 줄은 몰랐다."
-
-    with fade
 
     narrator "민호는 무거운 발걸음으로 집으로 향했다."
     narrator "앞으로 이 생활을 얼마나 더 해야 할지, 언제쯤 진짜 요리를 배울 수 있을지 걱정되기 시작했다."
@@ -551,9 +582,11 @@ label several_months_later:
 
     narrator "슬슬 민호는 지쳐가고 있었다."
 
-    minho "(생각) 자기가 이럴려고 요리를 배우고 요리사를 꿈꿨나, 나는 이 식당에서 한 명의 구성원으로 인정받고 있긴 한건가…"
+    minho "내가 이럴려고 요리를 배우고 요리사를 꿈꿨나... 나는 이 식당에서 한 명의 구성원으로 인정받고 있긴 한건가…"
 
     narrator "그렇게 퀭한 눈으로 오늘도 퇴근하고 있던 찰나…"
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "4개월.mp3"
     narrator "헤드 쉐프의 사무실 문틈이 살짝 열려있었다."
 
     scene bg dooropen
@@ -564,36 +597,53 @@ label several_months_later:
     show chef angry at left:
         zoom 1.3
 
-    chef "큰일났다! 2일 뒤 심사날이란 말이야! 끝내주게 맛있는 마라로제푸아그라조림 레시피를 개발했는데! 다 잃어버렸어..!!"
-
-
+    chef "큰일났다! 2일 뒤 심사날이란 말이야! 끝내주게 맛있는 마라로제 푸아그라 조림 레시피를 개발했는데! 다 잃어버렸어..!!"
 
     hide chef
     show minho doubt at center:
         zoom 1.2
     with dissolve
 
-    minho "(생각) 심사… 내일..? 내일 아닌 것 같은데… 일주일 뒤? 언제였지? 심사? 레시피? 무슨 레시피였더라…?"
+    minho "헉... 미슐랭 심사날 선보이려고 하셨던 궁극의 마라로제 푸아그라 조림 레시피가 사라진건가??! 어떡해!!!!"
+
+    narrator "민호는 퇴근도 잊고 한참을 고민한다."
+
+    narrator "마라로제 푸아그라 조림은 헤드 셰프가 몇 달동안 야심차게 준비했던 미식의 정점...!"
+
+    show mara:
+        xalign 0.5
+        yalign 0.5
+    with Dissolve(1)
+    
+    narrator "몇 분 후, 민호는 잃어버린 궁극의 레시피를 찾아 헤드셰프에게 가져다줄 결심을 한다!"
+
+    narrator "민호는 이 위기가 오히려 셰프의 예쁨도 받고 시니어 요리사로 성장할 기회라고 굳게 믿는다."
+
+    minho "심사… 내일..? 내일 아닌 것 같은데… 일주일 뒤? 언제였지? 심사? 레시피? 애초에 무슨 레시피였더라…?"
 
     narrator "민호는 너무 당황스러웠던 나머지 아까 들었던 내용을 다 까먹어버리고 말았다!"
 
     narrator "학창시절 내내 뒤에서 1등이었던 민호였다! 불쌍한 민호의 기억력을 도와, 조금 전 헤드셰프가 했던 말을 떠올려보자."
 
-    call memorial_game_start
+    narrator "헤드셰프의 말을 올바른 순서대로 누르면 성공!"
 
-    minho "심사는 2일 뒤이고, 마라로제푸아그라조림의 레시피가 사라졌구나...!!"
+    call memorial_game_start
 
     scene bg refrigerator
     with fade
 
+    minho "심사는 2일 뒤이고, 마라로제 푸아그라 조림의 레시피가 사라졌구나...!!"
+
+
     show minho normal at center:
         zoom 1.2
 
-    scene bg refm
-
+    
     minho "(생각) 어디 있을 만한 장소 없나? 음… 아무래도 냉장고를 봐야지. 냉장고에 재료 넣다가 깜빡하고 레시피도 넣었을 수도 있잖아…"
 
     narrator "냉장고를 열어보는 민호."
+
+    scene bg refm
 
     narrator "냉장고에는 단서로 보이는 메모 조각들이 있었다. 똑같은 카드를 뒤집어 단서를 전부 찾아내자!"
 
@@ -601,11 +651,11 @@ label several_months_later:
 
     scene bg refmemo
 
-    minho "이건...! 메모 조각들이야!"
+    minho "어..이게뭐지..?"
 
     narrator "냉장고의 메모 조각들을 합쳐보니, \"셰프의 서랍…\"이라는 메시지가 나왔다!"
     $ renpy.music.set_volume(1.0, channel='music')
-    play music "냉장고쪽지.mp3"
+    play music "냉장고쪽지.mp3" fadeout 1.0 fadein 1.0
 
     minho "셰프의 서랍...? 혹시 레시피가 거기 있는 걸까?"
 
@@ -616,13 +666,13 @@ label several_months_later:
 
     scene bg door with fade
 
-    show minho normal at center:
-        zoom 1.2
+    
  
     show jamul:
         xalign 0.5
         yalign 0.5
-    with Dissolve(3)
+        zoom 1.5
+    with Dissolve(2)
 
     narrator "그런데 셰프의 방문에는 자물쇠가 걸려 있다..!!"
 
@@ -631,6 +681,11 @@ label several_months_later:
     call lock_start
 
     scene bg chef_room
+
+    show cler:
+        xalign 0.5
+        yalign 0.5
+    with Dissolve(1)
 
     narrator "민호는 셰프의 방에 들어왔다."
 
@@ -657,7 +712,7 @@ label several_months_later:
 
     minho "그런데?!"
 
-    narrator "찢어진 페이지 뒤에 어떤 흔적이…!"
+    narrator "책 모퉁이에 어떤 흔적이 있었다...!"
 
     minho "이 흔적… 어디서 많이 봤다...!"
 
@@ -674,7 +729,7 @@ label several_months_later:
     show minho training at center:
         zoom 1.2
     $ renpy.music.set_volume(1.0, channel='music')  
-    play music "대기업식당 가는길.mp3"
+    play music "대기업식당 가는길.mp3" fadeout 1.0 fadein 1.0
 
     narrator "다음 날 바로 앞에 있는 진짜안무서운대기업식당으로 발걸음을 향하는 민호."
 
@@ -713,12 +768,10 @@ label delivery_attempt:
         zoom 1.5
     ab "저희 택배 시킨거.. 없는데요?"
     show minho sadtrain at right 
-    with fade
     narrator "당황한 민호는 그대로 튀어버렸다"
     jump infiltration_options
 
 label tv_crew_attempt:
-    # 이하 코드는 그대로 유지
     minho "안녕하세요 생생정보통에서 사전답사 왔는데요~ 저는 신입 pd 김민ㅎ…우라고 합니다! 잠시 셰프님과 얘기할 수 있을까요?"
     show minho training at right
     show ab dou at left:
@@ -766,7 +819,7 @@ label chase_youngsu:
 
     minho "저기요!!"
     $ renpy.music.set_volume(1.0, channel='music')
-    play music "영수대면.mp3"
+    play music "영수대면.mp3" fadeout 1.0 fadein 1.0
 
     ys "무슨 일로?"
 
@@ -804,10 +857,14 @@ label confront_youngsu:
     jump after_confrontation
 
 label after_confrontation:
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "터덜터덜.mp3"
     narrator "이제 뾰족한 수가 떠오르지 않는다."
     narrator "어느 새 날이 저물었다."
 
     scene bg nightstreet
+
+    scene kitchenup with fade
 
     show minho sadtrain at right
 
@@ -842,7 +899,7 @@ label happy_ending:
     minho "나는 그동안 잘 만든 레시피를 따라하고 쫓아가는 것에만 집중했다…"
     minho "진짜 중요한 건 나만의 레시피를 만드는 거였구나!"
     $ renpy.music.set_volume(1.0, channel='music')
-    play music "심사당일.mp3"
+    play music "면접.mp3" fadeout 1.0 fadein 1.0
 
     narrator "미슐랭 심사 날"
 
@@ -854,8 +911,8 @@ label happy_ending:
     with Dissolve(2)
     narrator "이름하여 고치돈 탕후루! 고구마 치즈 돈까스를 탕후루로 만들어낸 획기적인 음식이다!"
     $ renpy.music.set_volume(1.0, channel='music')
-    play music "해피엔딩.mp3"
-
+    play music "해피엔딩.mp3" fadeout 1.0 fadein 1.0
+    scene bg minos with fade
     narrator "이 음식은 미슐랭 심사에서 역사상 최초로 6스타를 받았고, 민호는 훗날 세계적인 요리사가 되어 자신의 식당을 세우게 된다."
 
     narrator "끝!"
@@ -865,10 +922,14 @@ label happy_ending:
 label sad_ending:
     minho "그럴 리가 없어!!! 진짜 레시피를 내놔!!!"
 
+    scene bg angry with fade
+    $ renpy.music.set_volume(1.0, channel='music')
+    play music "심사당일.mp3" fadeout 1.0 fadein 1.0
+
     narrator "민호는 노력했지만 결국 레시피를 알아내지 못했고, 결국 악덕식당의 미슐랭 등급은 떨어지게 된다."
     narrator "민호는 더 이상 식당에서 일할 수 없다고 생각해 사표를 쓰게 된다."
     $ renpy.music.set_volume(1.0, channel='music')
-    play music "새드엔딩.mp3"
+    play music "새드엔딩.mp3" fadeout 1.0 fadein 1.0
 
     narrator "끝 ㅜㅜ"
 

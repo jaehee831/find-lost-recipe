@@ -13,7 +13,7 @@ screen number_input:
         align (0.5, 0.5)
         has vbox
 
-        text "Enter a number:"
+        text "비밀번호를 입력하세요"
 
         input value VariableInputValue("input_value") default "" length 1:
             size 40
