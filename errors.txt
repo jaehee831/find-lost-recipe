@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 345: expected statement.
-    minho 
-          ^
+File "game/script.rpy", line 122: expected statement.
+    renpy.music.register_channel("background", "music", loop=True)
+                                                                  ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Tue Jul 16 22:26:01 2024
+Wed Jul 17 14:08:19 2024

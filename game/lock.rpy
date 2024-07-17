@@ -22,7 +22,7 @@ screen number_input:
 
 # 숫자 입력 변수 초기화
 default input_value = ""
-default correct_answer = 7
+default correct_answer = 1
 
 label lock_start:
     # 반복 입력 처리

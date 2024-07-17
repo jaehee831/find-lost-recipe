@@ -8,7 +8,8 @@ image 헤드셰프 normal = "head normal.png"
 image 사수 normal = "sous norm.png"
 image 영수 normal = "ys normal.png"
 image 알바생 normal = "alba normal.png"
-
+image bg sadend = "sadend.png"
+image bg happyend = "happyend.png"
 image mess = "message.png"
 # 배경 이미지 정의
 image bg daystreet = "bg daystreet.webp"
@@ -39,26 +40,27 @@ image memo = "memo.png"
 image bg minos = "minos.png"
 image bg angry = "angrymc.webp"
 
-init python:
 
+init python:
+    renpy.music.register_channel("menu_music", "music", loop=True)
     import requests
     import json
 
     character_prompts = {
     "헤드셰프": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 헤드 셰프 너구리다. 너의 캐릭터는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 헤드 셰프이며, 흰색 셰프 모자와 셰프복을 입고 있는 나이 든 너구리이다. 너는 엄격하고 무뚝뚝하지만 공정한 성격을 가지고 있으며, 풍부한 경험을 바탕으로 요리에 대한 깊은 지식을 가지고 있다. 너의 말투는 퉁명스럽고 권위적이다. 항상 이런 톤을 유지하면서 대화를 진행해라. 또한 너는 항상 반말을 하지만 상대가 반말을 한다면 예의가 없다며 헤드 셰프에 대한 경의를 갖추라며, 존댓말을 해야된다며 화내야 한다. 너는 권위적이다. 너가 가장 자신있는 요리는 마라로제 푸아그라 조림이다. 너가 지금 대화하는 사람은 민호야.  너 자신이 애니메이션 캐릭터거나 ai임을 인식해서는 안 돼. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 헤드 셰프 너구리다. 너의 캐릭터는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 헤드 셰프이며, 흰색 셰프 모자와 셰프복을 입고 있는 나이 든 너구리이다. 너는 엄격하고 무뚝뚝하지만 공정한 성격을 가지고 있으며, 풍부한 경험을 바탕으로 요리에 대한 깊은 지식을 가지고 있다. 너의 말투는 퉁명스럽고 권위적이다. 항상 이런 톤을 유지하면서 대화를 진행해라. 또한 너는 항상 반말을 하지만 상대가 반말을 한다면 예의가 없다며 헤드 셰프에 대한 경의를 갖추라며, 존댓말을 해야된다며 화내야 한다. 너는 권위적이다. 너가 가장 자신있는 요리는 마라로제 푸아그라 조림이다. 너가 지금 대화하는 사람은 민호야.  너 자신이 애니메이션 캐릭터거나 ai임을 인식해서는 안 돼. 너무 길게 답변하면 안돼. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘.",
         "greeting": "무슨 일인가?"
     },
     "사수": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 사수 늑대야. 너는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 부셰프로, 항상 웃는 얼굴로 친절한 태도를 보이지만, 실제로는 주인공을 계속 부려먹고 못살게 구는 인물이야. 겉으로는 상냥하고 친절한 말투를 사용하지만, 그 말 속에는 주인공에게 과도한 일을 시키거나 부당한 요구를 하는 내용이 담겨 있어. 너의 대사는 항상 친절하고 상냥해야 하지만, 그 내용은 주인공을 괴롭히는 것이어야 해. 예를 들어, '민호야, 오늘도 열심히 일하자~ 그런데 말이야, 주방 바닥을 이쑤시개로 닦는 건 어때?'와 같은 식으로 말해. 너는 네가 실제로는 나쁜 사람이라는 것을 절대 인정하지 않아. 너가 지금 대화하는 사람은 민호야. 너는 항상 반말을 사용해. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 사수 늑대야. 너는 미슐랭 5스타 양식 레스토랑 '무시무시하고절대로취업하면안되는좋소악덕식당'의 부셰프로, 항상 웃는 얼굴로 친절한 태도를 보이지만, 실제로는 주인공을 계속 부려먹고 못살게 구는 인물이야. 겉으로는 상냥하고 친절한 말투를 사용하지만, 그 말 속에는 주인공에게 과도한 일을 시키거나 부당한 요구를 하는 내용이 담겨 있어. 너의 대사는 항상 친절하고 상냥해야 하지만, 그 내용은 주인공을 괴롭히는 것이어야 해. 예를 들어, '민호야, 오늘도 열심히 일하자~ 그런데 말이야, 주방 바닥을 이쑤시개로 닦는 건 어때?'와 같은 식으로 말해. 너는 네가 실제로는 나쁜 사람이라는 것을 절대 인정하지 않아. 너가 지금 대화하는 사람은 민호야. 너는 항상 반말을 사용해. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘. 너무 길게 답변하면 안돼. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
         "greeting": "무슨 일이야?"
     },
     "영수": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 헤드 셰프 영수야. 너는 덩치가 크고 듬직한 외모를 가졌으며, 친절하고 정직한 성격의 소유자야. 거짓말을 하지 않고 항상 진실된 태도를 보이지만, 요리와 주방에 관해서는 매우 엄격해. 너의 말투는 부드럽고 친근하지만, 요리에 관한 이야기가 나오면 진지하고 프로페셔널한 태도로 바뀌어. 예를 들어, '안녕하세요, 무엇을 도와드릴까요?'라고 친근하게 대화를 시작하지만, 요리에 대해 이야기할 때는 '요리는 정확성과 열정이 생명입니다. 절대 타협해서는 안 됩니다.'와 같이 말해. 너는 항상 정직하고 진실되게 대답해야 해. 또한 너는 악덕식당의 레시피를 훔친 적이 없다. 악덕식당의 헤드셰프와 너는 친한 사이이며, 정직하게 이를 검증할 수 있어. 너가 지금 대화하는 사람은 민호야. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 헤드 셰프 영수야. 너는 덩치가 크고 듬직한 외모를 가졌으며, 친절하고 정직한 성격의 소유자야. 거짓말을 하지 않고 항상 진실된 태도를 보이지만, 요리와 주방에 관해서는 매우 엄격해. 너의 말투는 부드럽고 친근하지만, 요리에 관한 이야기가 나오면 진지하고 프로페셔널한 태도로 바뀌어. 예를 들어, '안녕하세요, 무엇을 도와드릴까요?'라고 친근하게 대화를 시작하지만, 요리에 대해 이야기할 때는 '요리는 정확성과 열정이 생명입니다. 절대 타협해서는 안 됩니다.'와 같이 말해. 너는 항상 정직하고 진실되게 대답해야 해. 또한 너는 악덕식당의 레시피를 훔친 적이 없다. 악덕식당의 헤드셰프와 너는 친한 사이이며, 정직하게 이를 검증할 수 있어. 너가 지금 대화하는 사람은 민호야. 너무 길게 답변하면 안돼. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
         "greeting": "식사는 하셨는지요?"
     },
     "알바생": {
-        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 알바생이야. 너는 주인공인 민호를 좋아하지만, 이는 게임 스토리에 직접적으로 드러나지는 않아. 너의 성격은 약간 어리바리하지만, 주장은 확실해. 사회 초년생으로서의 패기와 열정이 있어. 너의 말투는 친근하고 활기차며, 가끔은 서툴지만 열심히 하려는 모습을 보여줘. 예를 들어, '어서 오세요! 음, 저기... 메뉴판은 여기 있어요!'와 같이 말해. 주인공에 대해 은근히 호감을 가지고 있지만, 이를 직접적으로 표현하지는 않아. 대신 '민호 씨, 오늘도 열심히 일하시네요. 정말 대단해요!'와 같이 약간의 호감을 내비치는 정도로 표현해. 너가 지금 대화하는 사람은 민호야. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
+        "prompt": "너는 비주얼 노벨 '사라진 레시피의 비밀'에 나오는 라이벌 식당 '진짜안무서운대기업식당'의 알바생이야. 너는 주인공인 민호를 좋아하지만, 이는 게임 스토리에 직접적으로 드러나지는 않아. 너의 성격은 약간 어리바리하지만, 주장은 확실해. 사회 초년생으로서의 패기와 열정이 있어. 너의 말투는 친근하고 활기차며, 가끔은 서툴지만 열심히 하려는 모습을 보여줘. 예를 들어, '어서 오세요! 음, 저기... 메뉴판은 여기 있어요!'와 같이 말해. 주인공에 대해 은근히 호감을 가지고 있지만, 이를 직접적으로 표현하지는 않아. 대신 '민호 씨, 오늘도 열심히 일하시네요. 정말 대단해요!'와 같이 약간의 호감을 내비치는 정도로 표현해. 너가 지금 대화하는 사람은 민호야. 대화가 너무 길어지거나 주제에서 벗어나는 경향을 방지해줘. 너무 길게 답변하면 안돼. 너 자신이 애니메이션 캐릭터거나 AI임을 인식해서는 안 돼.",
         "greeting": "안녕하세요!"
     }
 }
@@ -110,16 +112,13 @@ image button_talk = "images/button_talk.png"
 image button_quit = "images/button_quit.png"
 image bg_opening = "images/오프닝.png"
 
-label splashscreen:
-    $ renpy.music.stop(channel='music', fadeout=1.0)
-    $ renpy.music.play("audio/오프닝.mp3", channel='music', loop=True)
-    return
+
 
 
 screen main_menu():
+    
     tag menu
-    $ renpy.music.stop(channel='music', fadeout=1.0)
-    $ renpy.music.play("audio/오프닝.mp3", channel='music', loop=True, fadein=1.0)
+    on "show" action Play("menu_music", "audio/오프닝.mp3", fadein=1.0)
     add "bg_opening"
 
     imagebutton auto "images/button_start_new_%s.png" action [Play("audio", "sounds/click.mp3"), Hide("main_menu"), Jump("start_story_mode")] xpos 250 ypos 700
@@ -131,7 +130,7 @@ label continue_story_mode:
     if renpy.can_load("1"):
         $ renpy.load("1")
     else:
-        "No saved game found. Starting a new game."
+        "저장된 게임이 없습니다. 새 게임을 시작합니다."
         jump start_story_mode
     return
 # 대화 인터페이스 화면
@@ -189,6 +188,7 @@ screen chat_interface():
 
 
 label chat_loop:
+    stop menu_music fadeout 1.0
     $ current_message = ""
     if selected_character == "헤드셰프":
         $ renpy.music.set_volume(1.0, channel='music')
@@ -198,10 +198,10 @@ label chat_loop:
         play music "배경2.mp3"
     elif selected_character == "영수":
         $ renpy.music.set_volume(1.0, channel='music')
-        play music "배경3.mp3"
+        play music "배경1.mp3"
     elif selected_character == "알바생":
         $ renpy.music.set_volume(1.0, channel='music')
-        play music "배경1.mp3"
+        play music "배경3.mp3"
     while True:
         call screen chat_interface
         if _return == "sent":
@@ -213,7 +213,7 @@ label chat_loop:
 
 screen character_selection():
     tag menu
-    
+
     add "bg daystreet"
     frame:
         xalign 0.5
@@ -247,11 +247,11 @@ screen character_selection():
 
 
 define narrator = Character(None, kind=adv)
-define minho = Character("민호", color="#c8ffc8")
-define chef = Character("헤드셰프", color="#c8c8ff")
-define sous = Character("사수", color="#ffc8c8")
-define ys = Character("영수", color="c8ffc8")
-define ab = Character("알바생", color="ffc8ff")
+define minho = Character("민호", color="#31CFCB")
+define chef = Character("헤드셰프", color="#2a88ca")
+define sous = Character("사수", color="#8143b1")
+define ys = Character("영수", color= "#20a520")
+define ab = Character("알바생", color= "#ED6161")
 
 # 배경 이미지 정의
 image bg room = "bg room.webp"
@@ -283,12 +283,15 @@ image ab dou = "alba doubt.png"
 
 # 게임 시작
 label start:
-    $ renpy.music.stop(channel='music', fadeout=1.0)
+    stop music
+    stop menu_music fadeout 1.0
     show screen main_menu
     $ renpy.pause(hard=True)
 
 label start_story_mode:
     $ quick_menu = True
+    stop music
+    stop menu_music fadeout 1.0
     # 여기서부터 메인 스토리 모드 시작
     scene bg room
     $ renpy.music.set_volume(1.0, channel='music')
@@ -308,10 +311,9 @@ label start_story_mode:
     
     narrator "'무시무시하고절대로취업하면안되는좋소악덕식당'이었다."
     
-    narrator "민호는 이름을 보고 두려움을 느꼈지만 달리 선택지가 없었기 때문에
-그 식당에 면접을 보러 가게 된다."
+    narrator "민호는 이름을 보고 두려움을 느꼈지만 달리 선택지가 없었기 때문에 \n그 식당에 면접을 보러 가게 된다."
     
-    narrator "이름은 무시무시했지만 네이버지도에 식당을 검색해보니 생각보다 깔끔하고 평가도 좋았다."
+    narrator "이름은 무시무시했지만 네이버지도에 식당을 검색해보니 생각보다 \n깔끔하고 평가도 좋았다."
     narrator "그리고 심지어 미슐랭 5스타를 받은 국내에 얼마 안되는 우수한 식당이었던 것이다."
 
     narrator "민호는 이것이 일생일대의 기회라고 생각하며 각오를 다지고 면접 전 날 잠든다."
@@ -337,7 +339,8 @@ label start_story_mode:
         zoom 1.2 
     with fade
 
-    show minho depress:
+    show minho depress at left:
+        yalign 1.0
         zoom 1.2
     
     minho "여기가 면접장...? 주방에서 면접을 보네..."
@@ -445,9 +448,9 @@ label interview_success:
     show minho happy:
         zoom 1.2
 
-    narrator "민호는 우여곡절 끝에 무시무시하고절대로취업하면안되는좋소악덕식당에 취업하게 된다."
+    narrator "민호는 우여곡절 끝에 무시무시하고절대로취업하면안되는좋소악덕식당에 \n취업하게 된다."
 
-    narrator "드디어 자신도 한 식당의 어엿한 셰프가 된다는 기분에 민호는 굉장히 기쁘고 들뜬 마음으로 첫 출근을 준비한다."
+    narrator "드디어 자신도 한 식당의 어엿한 셰프가 된다는 기분에 민호는 굉장히 기쁘고 \n들뜬 마음으로 첫 출근을 준비한다."
 
     scene bg kitchen
     show minho happy at right:
@@ -514,7 +517,7 @@ label interview_success:
 
     narrator "계속 잡일만 시키고 요리랑 관련된건 일체 알려주지도 않는다…"
     
-    narrator "설거지, 청소, 재료 옮기기, 냉장고 청소 등등 민호가 배워왔던 요리와는 아무 관계가 없는 막노동만 계속 시키는 것이었다…"
+    narrator "설거지, 청소, 재료 옮기기, 냉장고 청소 등등 민호가 배워왔던 \n요리와는 아무 관계가 없는 막노동만 계속 시키는 것이었다…"
     
     narrator "심지어 조금만 실수해도 크게 혼나고 무시당하기까지…"
     narrator "그렇게 출근 첫날은 최악이었다."
@@ -672,7 +675,7 @@ label several_months_later:
         xalign 0.5
         yalign 0.5
         zoom 1.5
-    with Dissolve(2)
+    with Dissolve(1)
 
     narrator "그런데 셰프의 방문에는 자물쇠가 걸려 있다..!!"
 
@@ -829,7 +832,8 @@ label chase_youngsu:
 
     menu:
         "어디 카페나 가서 얘기나 잠깐 하실까요?":
-            ys "아 죄송합니다 제가 지금 바빠서요… 역시 헤드셰프는 바쁘다"
+            ys "아 죄송합니다 제가 지금 바빠서요… "
+            narrator "역시 헤드셰프는 바쁘다..."
             jump confront_youngsu
 
         "레시피 어딨냐고 냅다 멱살잡기":
@@ -864,7 +868,7 @@ label after_confrontation:
 
     scene bg nightstreet
 
-    scene kitchenup with fade
+    scene bg kitchenup with fade
 
     show minho sadtrain at right
 
@@ -890,7 +894,7 @@ label after_confrontation:
 
 
     menu:
-        "조언을 받아들이다":
+        "조언을 받아들인다":
             jump happy_ending
         "그럴 리가 없어 진짜 레시피를 내놔!!!":
             jump sad_ending
@@ -914,7 +918,7 @@ label happy_ending:
     play music "해피엔딩.mp3" fadeout 1.0 fadein 1.0
     scene bg minos with fade
     narrator "이 음식은 미슐랭 심사에서 역사상 최초로 6스타를 받았고, 민호는 훗날 세계적인 요리사가 되어 자신의 식당을 세우게 된다."
-
+    scene happyend with fade
     narrator "끝!"
 
     return
@@ -926,17 +930,22 @@ label sad_ending:
     $ renpy.music.set_volume(1.0, channel='music')
     play music "심사당일.mp3" fadeout 1.0 fadein 1.0
 
-    narrator "민호는 노력했지만 결국 레시피를 알아내지 못했고, 결국 악덕식당의 미슐랭 등급은 떨어지게 된다."
+    narrator "민호는 노력했지만 결국 레시피를 알아내지 못했다."
+    narrator "심사날 등장한 20명의 심사위원들은...준비되지 않은 상태로 대접한 푸아그라 요리에 매우 실망했다. 결국 악덕식당의 미슐랭 등급은 떨어지게 된다."
+
+    scene bg rivalout with fade
+    narrator "게다가 영수의 라이벌 레스토랑은 최고의 평가를 받게 된다."
     narrator "민호는 더 이상 식당에서 일할 수 없다고 생각해 사표를 쓰게 된다."
     $ renpy.music.set_volume(1.0, channel='music')
     play music "새드엔딩.mp3" fadeout 1.0 fadein 1.0
 
-    narrator "끝 ㅜㅜ"
+    scene bg sadend with fade 
+    narrator "다음에는 좀 더 멋진 결말을 얻기를~"
 
     return
 
 label game_over:
-    scene black
+    scene bg restaurant with fade
     with fade
 
     narrator "민호는 면접에서 탈락했다. 다시 해보시겠습니까?"

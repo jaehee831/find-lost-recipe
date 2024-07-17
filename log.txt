@@ -1,36 +1,37 @@
-2024-07-17 04:48:32 UTC
+2024-07-17 05:57:04 UTC
 Windows-10-10.0.22631
 Ren'Py 8.2.3.24061702
 
-Early init took 0.05s
+Early init took 0.04s
 Loading error handling took 0.02s
-Loading script took 0.08s
+Loading script took 0.17s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
 Running init code took 0.11s
-Loading analysis data took 0.02s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.01s
 Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bsj\\AppData\\Roaming/RenPy/backups\\secretry':
 Dump and make backups took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.04s
+Initial gc took 0.05s
 DPI scale factor: 1.500000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.04s
+Init translation took 0.03s
 Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.04s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.02s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 0.08s
+Interface start took 0.72s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1200)
@@ -42,19 +43,3 @@ Version: b'4.6.0 Compatibility Profile Context 23.20.56.09.240403'
 Display Info: None
 Screen sizes: virtual=(1792, 1024) physical=(1809, 1034) drawable=(1809, 1034)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 612, in script
-    narration "민호는 퇴근도 잊고 한참을 고민한다."
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 2560, in execute
-    Say.execute(self)
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 575, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\bsj\Downloads\renpy-8.2.3-sdk\renpy\ast.py", line 464, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'narration' is not defined.
-
-While running game code:
-  File "game/script.rpy", line 612, in script
-    narration "민호는 퇴근도 잊고 한참을 고민한다."
-Exception: Sayer 'narration' is not defined.

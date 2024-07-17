@@ -14,6 +14,7 @@ style default:
     language gui.language
 
 style input:
+    color "#ffffff"
     properties gui.text_properties("input", accent=True)
     adjust_spacing False
 
@@ -149,6 +150,7 @@ style namebox:
 
 style say_label:
     properties gui.text_properties("name", accent=True)
+    outlines [ (absolute(2), "#ffffff", absolute(0), absolute(0)) ]
     xalign gui.name_xalign
     yalign 0.5
 
@@ -187,10 +189,12 @@ screen input(prompt):
 style input_prompt is default
 
 style input_prompt:
+    color "#ffffff"
     xalign gui.dialogue_text_xalign
     properties gui.text_properties("input_prompt")
 
 style input:
+    color "#ffffff"
     xalign gui.dialogue_text_xalign
     xmaximum gui.dialogue_width
 

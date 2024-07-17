@@ -130,7 +130,7 @@ define gui.namebox_tile = False
 
 ## 텍스트박스에서 대사의 위치입니다. These can be a whole number of pixels
 ## relative to the left or top side of the textbox, or 0.5 to center.
-define gui.dialogue_xpos = 402
+define gui.dialogue_xpos = 330
 define gui.dialogue_ypos = 75
 
 ## 픽셀값에서 대사의 최대 너비입니다.
@@ -139,6 +139,14 @@ define gui.dialogue_width = 1116
 ## 대사 글자의 수평 정렬입니다. 이것은 0.0으로 좌측 정렬, 0.5로 중앙, 그리고 1.0
 ## 으로 우측 정렬이 될 수 있습니다.
 define gui.dialogue_text_xalign = 0.0
+
+define gui.dialogue_text_size = 35
+
+## 대사의 줄 간격입니다.
+define gui.dialogue_text_line_spacing = 15
+
+## 대사 텍스트의 외곽선 (테두리) 설정입니다.
+define gui.dialogue_text_outlines = [ (1, "#000000", 0, 0) ]
 
 
 ## 버튼들 #########################################################################
