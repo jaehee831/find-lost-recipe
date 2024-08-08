@@ -1,5 +1,5 @@
 # 사라진 레시피를 찾아라! 
-~무시무시하고절대로취업하면안되는좋소악덕식당에취업해버렸다?!??!
+~무시무시하고절대로취업하면안되는좋소악덕식당에취업해버렸다?!??!~
 
 ## 🍮게임 설명
 
@@ -75,3 +75,13 @@
 - 디자인: Figma
     
 - 이미지, bgm 리소스: DALL:E, Midjourney, Suno AI
+
+## 🍮실행파일 링크 
+
+---
+
+- windows
+  https://drive.google.com/file/d/1B1TkpcVhFT0RNtDwz4cgDnpkp7P6ZsLr/view?usp=sharing
+  
+- mac
+  https://drive.google.com/file/d/1YruSsGlxwl7gSXXQ8PIkfmhn2FNWolf_/view?usp=sharing
