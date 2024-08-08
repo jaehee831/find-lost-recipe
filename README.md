@@ -7,7 +7,7 @@
 
 ![오프닝 (2)](https://github.com/user-attachments/assets/305e7aa7-84b1-404e-ab53-74714262f269)
 
-**사라진 레시피를 찾아라!**는 비주얼 노벨 형식의 스토리 게임입니다. 
+🎟️사라진 레시피를 찾아라!🎟️는 비주얼 노벨 형식의 스토리 게임입니다. 
 
 ### 처음부터 시작, 이어서 시작 🎟️
 
@@ -81,7 +81,9 @@
 ---
 
 - windows
+  
   https://drive.google.com/file/d/1B1TkpcVhFT0RNtDwz4cgDnpkp7P6ZsLr/view?usp=sharing
   
 - mac
+  
   https://drive.google.com/file/d/1YruSsGlxwl7gSXXQ8PIkfmhn2FNWolf_/view?usp=sharing
